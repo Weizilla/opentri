@@ -3,6 +3,7 @@ import mechanize
 import re
 from bs4 import BeautifulSoup
 from operator import attrgetter, methodcaller
+import os
 
 index = "http://opentri-training.com/free/ultra/"
 
@@ -58,6 +59,22 @@ class OpenTri(object):
         for i, l in enumerate(self.links):
             l.num = i + 1
 
+    def save(self, directory):
+        if not os.path.isdir(directory):
+            os.makedirs(directory)
+
+        for link in self.links:
+            self.saveLink(link, directory)
+
+    def saveLink(self, link, directory):
+        data = self.open(link.url)
+
+        filename = "Week-{n}.html".format(n=link.num)
+        path = os.path.join(directory, filename)
+        with open(path, "w") as output:
+            output.write(data)                            
+            print "Wrote ", path
+
 class Link(object):
     def __init__(self, linkType, linkNum, url):
         self.linkType = linkType
@@ -74,3 +91,4 @@ class Link(object):
 if __name__ == "__main__":
     openTri = OpenTri()
     print "\n".join(str(s) for s in openTri.links)
+    openTri.save("target")
