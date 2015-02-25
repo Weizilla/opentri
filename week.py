@@ -5,10 +5,12 @@ import re
 from bs4 import BeautifulSoup
 from itertools import tee, izip
 from collections import OrderedDict
+import mechanize
+import os
 
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", None]
 
-clean = ["<FONT FACE=\"Arial\">", "<FONT SIZE=-1>", "</FONT>", "<HR>", "</BODY>", "</HTML>" ]
+clean = ["<FONT FACE=\"Arial\">", "<FONT SIZE=-1>", "</FONT>", "<HR>", "</BODY>", "</HTML>"]
 
 def pairwise(iterable):
     "s -> (s0,s1), (s1,s2), (s2, s3), ..."
@@ -17,27 +19,38 @@ def pairwise(iterable):
     return izip(a, b)
 
 class Week(object):
-    def __init__(self, filename):
-        with open(filename) as htmlFile:
-            self.html = htmlFile.read() 
-        self.clean()
+    def __init__(self, source, num=None, html=False):
+        self.num = num
+        self.read(source)
+        self.clean(html)
         self.parse()
 
-    def clean(self):
-        for cleanText in clean:
-            self.html = self.html.replace(cleanText, "")
+    def read(self, source):
+        if source.startswith("http"):
+            self.html = mechanize.Browser().open(source).get_data()
+        elif os.path.isfile(source):
+            with open(source) as htmlFile:
+                self.html = htmlFile.read() 
+        else:
+            raise ValueError("Invalid source {}".format(source))
+
+    def clean(self, html):
+        if html:
+            for cleanText in clean:
+                self.text = self.html.replace(cleanText, "")
+        else:
+            self.text = BeautifulSoup(self.html).get_text().encode("utf-8")
+        self.text = self.text.replace("\n\n", "\n")
 
     def parse(self):
         self.days = OrderedDict()
         for startDay, endDay in pairwise(days):
-            startDayIndex = self.html.index(startDay)
-            start = self.html.index("<BR>", startDayIndex)
+            start = self.text.index(startDay)
             if endDay:
-                endDayIndex = self.html.index(endDay)
-                end = self.html.rindex("<DIV ALIGN=right>", startDayIndex, endDayIndex)
-                workout = self.html[start:end]
+                end = self.text.index(endDay)
+                workout = self.text[start:end]
             else:
-                workout = self.html[start:]
+                workout = self.text[start:]
             self.days[startDay] = Day(startDay, workout.strip())
 
 class Day(object):
@@ -47,12 +60,12 @@ class Day(object):
 
 def parseArgs():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("filename", help="The file to parse")
+    parser.add_argument("source", help="The source to parse")
     return parser.parse_args()
 
 if __name__ == "__main__":
     args = parseArgs()
-    week = Week(args.filename)
+    week = Week(args.source)
     for day in week.days.values():
         print day.day
         print day.workout

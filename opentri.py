@@ -4,6 +4,7 @@ import re
 from bs4 import BeautifulSoup
 from operator import attrgetter, methodcaller
 import os
+from week import Week
 
 index = "http://opentri-training.com/free/ultra/"
 
@@ -35,6 +36,7 @@ class OpenTri(object):
             if link:
                 self.links.append(link)
         self.sort()
+        self.parseWeeks()
 
     def open(self, url):
         return self.br.open(url).get_data()
@@ -58,6 +60,15 @@ class OpenTri(object):
         self.links = sorted(self.links, key=attrgetter("typeSort", "linkNum"))
         for i, l in enumerate(self.links):
             l.num = i + 1
+        
+    def parseWeeks(self):
+        self.weeks = []
+        for link in self.links: 
+            try:
+                self.weeks.append(Week(link.url, link.num))
+                print "Parsed week {}".format(link.num)
+            except:
+                print "Error parsing {}".format(link)
 
     def save(self, directory):
         if not os.path.isdir(directory):
@@ -90,5 +101,4 @@ class Link(object):
 
 if __name__ == "__main__":
     openTri = OpenTri()
-    print "\n".join(str(s) for s in openTri.links)
     openTri.save("target")
