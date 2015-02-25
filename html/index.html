@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-<script src="jquery-1.11.2.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
-
-</head>
-
-<title>Open Tri Workouts</title>
-<body>
-<h1>WORKOUTS</h1>
-<div class="container">
-    <div class="row">
-    <div class="col-lg-1">
-        Week 1
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="opentri.css">
+        <script src="jquery-1.11.2.min.js"></script>
+        <script src="opentri.js"></script>
+    </head>
+    <title>Open Tri Workouts</title>
+    <body>
+        <h1>WORKOUTS</h1>
+        <div class="week">
+    <div class="weekHeader">
+        Week 1 
+        <a class="weekToggle" href="#" data-target="week1" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week1" data-display="false">Hide All</a>
     </div>
-</div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week1Monday" aria-expanded="false" aria-controls="week1Monday">
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week1Monday">
         Monday
-    </button>
-    <div class="collapse" id="week1Monday">
+    </div>
+    <div class="dayLong week1" id="week1Monday">
         Monday<br>
 We begin easily enough with one short<br>
 swim. Nothing too crazy here, just allow yourself some time to get used<br>
@@ -43,11 +41,11 @@ COOL DOWN:<br>
 DAILY TOTAL: 0:30
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week1Tuesday" aria-expanded="false" aria-controls="week1Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week1Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week1Tuesday">
+    </div>
+    <div class="dayLong week1" id="week1Tuesday">
         Tuesday<br>
 Because the duration of each workout<br>
 is relatively short today, it is possible to put them in your day together,<br>
@@ -75,11 +73,11 @@ DAILY TOTAL: 1:25<br>
 WEEK-TO-DATE: 1:55
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week1Wednesday" aria-expanded="false" aria-controls="week1Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week1Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week1Wednesday">
+    </div>
+    <div class="dayLong week1" id="week1Wednesday">
         Wednesday<br>
 Today's swim is a standard duration<br>
 that we will incorporate into most Wednesday schedules. You can schedule<br>
@@ -115,11 +113,11 @@ DAILY TOTAL: 1:25<br>
 WEEK-TO-DATE: 3:20
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week1Thursday" aria-expanded="false" aria-controls="week1Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week1Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week1Thursday">
+    </div>
+    <div class="dayLong week1" id="week1Thursday">
         Thursday<br>
 Thursday's schedules will generally<br>
 include a longer morning swim and a running session at the track later<br>
@@ -149,11 +147,11 @@ DAILY TOTAL: 1:30<br>
 WEEK-TO-DATE: 4:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week1Friday" aria-expanded="false" aria-controls="week1Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week1Friday">
         Friday
-    </button>
-    <div class="collapse" id="week1Friday">
+    </div>
+    <div class="dayLong week1" id="week1Friday">
         Friday<br>
 This is an optional additional swim<br>
 that we are incorporating into the first two weeks only. In the future<br>
@@ -175,11 +173,11 @@ DAILY TOTAL: 0:30<br>
 WEEK-TO-DATE: 5:20
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week1Saturday" aria-expanded="false" aria-controls="week1Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week1Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week1Saturday">
+    </div>
+    <div class="dayLong week1" id="week1Saturday">
         Saturday<br>
 Saturday's schedules will almost always<br>
 include the longest cycling session of the week. This will be performed<br>
@@ -215,11 +213,11 @@ DAILY TOTAL: 1:20<br>
 WEEK-TO-DATE: 6:40
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week1Sunday" aria-expanded="false" aria-controls="week1Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week1Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week1Sunday">
+    </div>
+    <div class="dayLong week1" id="week1Sunday">
         Sunday<br>
 Sunday's focus is generally on the<br>
 run; we incorporate an additional ride to increase the total aerobic effort<br>
@@ -242,18 +240,20 @@ WEEK-TO-DATE: 8:05
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 2
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week2Monday" aria-expanded="false" aria-controls="week2Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 2 
+        <a class="weekToggle" href="#" data-target="week2" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week2" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week2Monday">
         Monday
-    </button>
-    <div class="collapse" id="week2Monday">
+    </div>
+    <div class="dayLong week2" id="week2Monday">
         Monday<br>
 A shorter, easy swim with some additional<br>
 stroke work to build overall strength and provide some variety.<br>
@@ -272,11 +272,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:30
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week2Tuesday" aria-expanded="false" aria-controls="week2Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week2Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week2Tuesday">
+    </div>
+    <div class="dayLong week2" id="week2Tuesday">
         Tuesday<br>
 The bike ride should be done first<br>
 today; the run can follow either immediately after or later in the day,<br>
@@ -301,11 +301,11 @@ DAILY TOTAL: 1:25<br>
 WEEK-TO-DATE: 1:55
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week2Wednesday" aria-expanded="false" aria-controls="week2Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week2Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week2Wednesday">
+    </div>
+    <div class="dayLong week2" id="week2Wednesday">
         Wednesday<br>
 <br>
 SWIM 0:45<br>
@@ -336,11 +336,11 @@ DAILY TOTAL: 1:25<br>
 WEEK-TO-DATE: 3:20
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week2Thursday" aria-expanded="false" aria-controls="week2Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week2Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week2Thursday">
+    </div>
+    <div class="dayLong week2" id="week2Thursday">
         Thursday<br>
 <br>
 SWIM 0:45<br>
@@ -369,11 +369,11 @@ DAILY TOTAL: 1:30<br>
 WEEK-TO-DATE: 4:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week2Friday" aria-expanded="false" aria-controls="week2Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week2Friday">
         Friday
-    </button>
-    <div class="collapse" id="week2Friday">
+    </div>
+    <div class="dayLong week2" id="week2Friday">
         Friday<br>
 As with last week, this is an optional<br>
 additional swim to help you get used to getting back in the water. If you<br>
@@ -391,11 +391,11 @@ DAILY TOTAL: 0:30<br>
 WEEK-TO-DATE: 5:20
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week2Saturday" aria-expanded="false" aria-controls="week2Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week2Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week2Saturday">
+    </div>
+    <div class="dayLong week2" id="week2Saturday">
         Saturday<br>
 Saturday's ride will always be the<br>
 longest effort of the week. For those who can ride outdoors year-round,<br>
@@ -424,11 +424,11 @@ DAILY TOTAL: 1:20<br>
 WEEK-TO-DATE: 6:40
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week2Sunday" aria-expanded="false" aria-controls="week2Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week2Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week2Sunday">
+    </div>
+    <div class="dayLong week2" id="week2Sunday">
         Sunday<br>
 These two sessions should be done<br>
 back-to-back, in either order. If you live in a warmer climate and can<br>
@@ -451,18 +451,20 @@ WEEK-TO-DATE: 8:05
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 3
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week3Monday" aria-expanded="false" aria-controls="week3Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 3 
+        <a class="weekToggle" href="#" data-target="week3" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week3" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week3Monday">
         Monday
-    </button>
-    <div class="collapse" id="week3Monday">
+    </div>
+    <div class="dayLong week3" id="week3Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -481,11 +483,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week3Tuesday" aria-expanded="false" aria-controls="week3Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week3Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week3Tuesday">
+    </div>
+    <div class="dayLong week3" id="week3Tuesday">
         Tuesday, 12/17<br>
 <br>
 BIKE 0:55<br>
@@ -513,11 +515,11 @@ DAILY TOTAL: 1:25<br>
 WEEK-TO-DATE: 2:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week3Wednesday" aria-expanded="false" aria-controls="week3Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week3Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week3Wednesday">
+    </div>
+    <div class="dayLong week3" id="week3Wednesday">
         Wednesday, 12/18<br>
 <br>
 SWIM 0:45<br>
@@ -548,11 +550,11 @@ DAILY TOTAL: 1:30<br>
 WEEK-TO-DATE: 3:40
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week3Thursday" aria-expanded="false" aria-controls="week3Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week3Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week3Thursday">
+    </div>
+    <div class="dayLong week3" id="week3Thursday">
         Thursday, 12/19<br>
 <br>
 SWIM 1:00<br>
@@ -584,21 +586,21 @@ DAILY TOTAL: 1:35<br>
 WEEK-TO-DATE: 5:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week3Friday" aria-expanded="false" aria-controls="week3Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week3Friday">
         Friday
-    </button>
-    <div class="collapse" id="week3Friday">
+    </div>
+    <div class="dayLong week3" id="week3Friday">
         Friday, 12/20<br>
 Complete recovery day -- get ready<br>
 for the weekend! 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week3Saturday" aria-expanded="false" aria-controls="week3Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week3Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week3Saturday">
+    </div>
+    <div class="dayLong week3" id="week3Saturday">
         Saturday, 12/21<br>
 <br>
 BIKE 1:30<br>
@@ -628,11 +630,11 @@ DAILY TOTAL: 1:30<br>
 WEEK-TO-DATE: 6:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week3Sunday" aria-expanded="false" aria-controls="week3Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week3Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week3Sunday">
+    </div>
+    <div class="dayLong week3" id="week3Sunday">
         Sunday, 12/22<br>
 <br>
 RUN 0:50<br>
@@ -652,18 +654,20 @@ WEEK-TO-DATE: 8:10
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 4
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week4Monday" aria-expanded="false" aria-controls="week4Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 4 
+        <a class="weekToggle" href="#" data-target="week4" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week4" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week4Monday">
         Monday
-    </button>
-    <div class="collapse" id="week4Monday">
+    </div>
+    <div class="dayLong week4" id="week4Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -682,11 +686,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week4Tuesday" aria-expanded="false" aria-controls="week4Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week4Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week4Tuesday">
+    </div>
+    <div class="dayLong week4" id="week4Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:10<br>
@@ -708,11 +712,11 @@ DAILY TOTAL: 1:35<br>
 WEEK-TO-DATE: 2:20
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week4Wednesday" aria-expanded="false" aria-controls="week4Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week4Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week4Wednesday">
+    </div>
+    <div class="dayLong week4" id="week4Wednesday">
         Wednesday<br>
 <br>
 BIKE 0:55<br>
@@ -733,11 +737,11 @@ DAILY TOTAL: 0:55<br>
 WEEK-TO-DATE: 3:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week4Thursday" aria-expanded="false" aria-controls="week4Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week4Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week4Thursday">
+    </div>
+    <div class="dayLong week4" id="week4Thursday">
         Thursday<br>
 <br>
 SWIM 0:45<br>
@@ -767,11 +771,11 @@ DAILY TOTAL: 1:20<br>
 WEEK-TO-DATE: 4:35
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week4Friday" aria-expanded="false" aria-controls="week4Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week4Friday">
         Friday
-    </button>
-    <div class="collapse" id="week4Friday">
+    </div>
+    <div class="dayLong week4" id="week4Friday">
         Friday<br>
 <br>
 SWIM 1:00<br>
@@ -793,11 +797,11 @@ DAILY TOTAL: 1:00<br>
 WEEK-TO-DATE: 5:35
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week4Saturday" aria-expanded="false" aria-controls="week4Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week4Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week4Saturday">
+    </div>
+    <div class="dayLong week4" id="week4Saturday">
         Saturday<br>
 <br>
 BIKE 1:45<br>
@@ -837,11 +841,11 @@ DAILY TOTAL: 2:10<br>
 WEEK-TO-DATE: 7:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week4Sunday" aria-expanded="false" aria-controls="week4Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week4Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week4Sunday">
+    </div>
+    <div class="dayLong week4" id="week4Sunday">
         Sunday<br>
 <br>
 RUN 0:55<br>
@@ -861,18 +865,20 @@ WEEK-TO-DATE: 9:20
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 5
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week5Monday" aria-expanded="false" aria-controls="week5Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 5 
+        <a class="weekToggle" href="#" data-target="week5" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week5" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week5Monday">
         Monday
-    </button>
-    <div class="collapse" id="week5Monday">
+    </div>
+    <div class="dayLong week5" id="week5Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -890,11 +896,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week5Tuesday" aria-expanded="false" aria-controls="week5Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week5Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week5Tuesday">
+    </div>
+    <div class="dayLong week5" id="week5Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:20<br>
@@ -916,11 +922,11 @@ DAILY TOTAL: 1:50<br>
 WEEK-TO-DATE: 2:35
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week5Wednesday" aria-expanded="false" aria-controls="week5Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week5Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week5Wednesday">
+    </div>
+    <div class="dayLong week5" id="week5Wednesday">
         Wednesday<br>
 <br>
 BIKE 1:05<br>
@@ -941,11 +947,11 @@ DAILY TOTAL: 1:05<br>
 WEEK-TO-DATE: 3:40
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week5Thursday" aria-expanded="false" aria-controls="week5Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week5Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week5Thursday">
+    </div>
+    <div class="dayLong week5" id="week5Thursday">
         Thursday<br>
 <br>
 SWIM 0:45<br>
@@ -976,11 +982,11 @@ DAILY TOTAL: 1:25<br>
 WEEK-TO-DATE: 5:05
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week5Friday" aria-expanded="false" aria-controls="week5Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week5Friday">
         Friday
-    </button>
-    <div class="collapse" id="week5Friday">
+    </div>
+    <div class="dayLong week5" id="week5Friday">
         Friday<br>
 <br>
 SWIM 1:00<br>
@@ -1000,11 +1006,11 @@ DAILY TOTAL: 1:00<br>
 WEEK-TO-DATE: 6:05
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week5Saturday" aria-expanded="false" aria-controls="week5Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week5Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week5Saturday">
+    </div>
+    <div class="dayLong week5" id="week5Saturday">
         Saturday<br>
 <br>
 BIKE 2:15<br>
@@ -1040,11 +1046,11 @@ DAILY TOTAL: 2:45<br>
 WEEK-TO-DATE: 8:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week5Sunday" aria-expanded="false" aria-controls="week5Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week5Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week5Sunday">
+    </div>
+    <div class="dayLong week5" id="week5Sunday">
         Sunday<br>
 <br>
 RUN 1:10<br>
@@ -1079,18 +1085,20 @@ WEEK-TO-DATE: 10:50
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 6
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week6Monday" aria-expanded="false" aria-controls="week6Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 6 
+        <a class="weekToggle" href="#" data-target="week6" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week6" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week6Monday">
         Monday
-    </button>
-    <div class="collapse" id="week6Monday">
+    </div>
+    <div class="dayLong week6" id="week6Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -1119,11 +1127,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week6Tuesday" aria-expanded="false" aria-controls="week6Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week6Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week6Tuesday">
+    </div>
+    <div class="dayLong week6" id="week6Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:15<br>
@@ -1153,11 +1161,11 @@ DAILY TOTAL: 1:15<br>
 WEEK-TO-DATE: 2:00
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week6Wednesday" aria-expanded="false" aria-controls="week6Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week6Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week6Wednesday">
+    </div>
+    <div class="dayLong week6" id="week6Wednesday">
         Wednesday<br>
 <br>
 SWIM 1:00<br>
@@ -1195,11 +1203,11 @@ DAILY TOTAL: 1:40<br>
 WEEK-TO-DATE: 3:40
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week6Thursday" aria-expanded="false" aria-controls="week6Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week6Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week6Thursday">
+    </div>
+    <div class="dayLong week6" id="week6Thursday">
         Thursday<br>
 <br>
 SWIM 0:45<br>
@@ -1243,11 +1251,11 @@ DAILY TOTAL: 1:35<br>
 WEEK-TO-DATE: 5:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week6Friday" aria-expanded="false" aria-controls="week6Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week6Friday">
         Friday
-    </button>
-    <div class="collapse" id="week6Friday">
+    </div>
+    <div class="dayLong week6" id="week6Friday">
         Friday<br>
 Complete recovery day -- this is an<br>
 extremely important day during this higher intensity week.<br>
@@ -1255,11 +1263,11 @@ Put your feet up, hydrate all day<br>
 long, and try to reduce your stress level. 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week6Saturday" aria-expanded="false" aria-controls="week6Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week6Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week6Saturday">
+    </div>
+    <div class="dayLong week6" id="week6Saturday">
         Saturday<br>
 <br>
 BIKE 1:45<br>
@@ -1283,11 +1291,11 @@ DAILY TOTAL: 1:45<br>
 WEEK-TO-DATE: 7:00
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week6Sunday" aria-expanded="false" aria-controls="week6Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week6Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week6Sunday">
+    </div>
+    <div class="dayLong week6" id="week6Sunday">
         Sunday<br>
 <br>
 RUN 1:20<br>
@@ -1304,18 +1312,20 @@ WEEK-TO-DATE: 8:55
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 7
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week7Monday" aria-expanded="false" aria-controls="week7Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 7 
+        <a class="weekToggle" href="#" data-target="week7" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week7" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week7Monday">
         Monday
-    </button>
-    <div class="collapse" id="week7Monday">
+    </div>
+    <div class="dayLong week7" id="week7Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -1334,11 +1344,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week7Tuesday" aria-expanded="false" aria-controls="week7Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week7Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week7Tuesday">
+    </div>
+    <div class="dayLong week7" id="week7Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:05<br>
@@ -1374,11 +1384,11 @@ DAILY TOTAL: 1:40<br>
 WEEK-TO-DATE: 2:25
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week7Wednesday" aria-expanded="false" aria-controls="week7Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week7Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week7Wednesday">
+    </div>
+    <div class="dayLong week7" id="week7Wednesday">
         Wednesday<br>
 <br>
 SWIM 0:45<br>
@@ -1410,11 +1420,11 @@ DAILY TOTAL: 1:40<br>
 WEEK-TO-DATE: 4:05
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week7Thursday" aria-expanded="false" aria-controls="week7Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week7Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week7Thursday">
+    </div>
+    <div class="dayLong week7" id="week7Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -1454,21 +1464,21 @@ DAILY TOTAL: 1:50<br>
 WEEK-TO-DATE: 5:55
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week7Friday" aria-expanded="false" aria-controls="week7Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week7Friday">
         Friday
-    </button>
-    <div class="collapse" id="week7Friday">
+    </div>
+    <div class="dayLong week7" id="week7Friday">
         Friday<br>
 Complete recovery day -- relax and<br>
 get ready for the weekend... 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week7Saturday" aria-expanded="false" aria-controls="week7Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week7Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week7Saturday">
+    </div>
+    <div class="dayLong week7" id="week7Saturday">
         Saturday<br>
 <br>
 BIKE 1:45<br>
@@ -1510,11 +1520,11 @@ DAILY TOTAL: 1:45<br>
 WEEK-TO-DATE: 7:40
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week7Sunday" aria-expanded="false" aria-controls="week7Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week7Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week7Sunday">
+    </div>
+    <div class="dayLong week7" id="week7Sunday">
         Sunday<br>
 <br>
 RUN 1:10<br>
@@ -1536,18 +1546,20 @@ WEEK-TO-DATE: 9:30
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 8
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week8Monday" aria-expanded="false" aria-controls="week8Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 8 
+        <a class="weekToggle" href="#" data-target="week8" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week8" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week8Monday">
         Monday
-    </button>
-    <div class="collapse" id="week8Monday">
+    </div>
+    <div class="dayLong week8" id="week8Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -1568,11 +1580,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week8Tuesday" aria-expanded="false" aria-controls="week8Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week8Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week8Tuesday">
+    </div>
+    <div class="dayLong week8" id="week8Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:10<br>
@@ -1609,11 +1621,11 @@ DAILY TOTAL: 1:45<br>
 WEEK-TO-DATE: 2:30
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week8Wednesday" aria-expanded="false" aria-controls="week8Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week8Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week8Wednesday">
+    </div>
+    <div class="dayLong week8" id="week8Wednesday">
         Wednesday<br>
 <br>
 SWIM 1:00<br>
@@ -1654,11 +1666,11 @@ DAILY TOTAL: 2:00<br>
 WEEK-TO-DATE: 4:30
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week8Thursday" aria-expanded="false" aria-controls="week8Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week8Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week8Thursday">
+    </div>
+    <div class="dayLong week8" id="week8Thursday">
         Thursday<br>
 <br>
 SWIM 0:45<br>
@@ -1693,22 +1705,22 @@ DAILY TOTAL: 1:30<br>
 WEEK-TO-DATE: 6:00
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week8Friday" aria-expanded="false" aria-controls="week8Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week8Friday">
         Friday
-    </button>
-    <div class="collapse" id="week8Friday">
+    </div>
+    <div class="dayLong week8" id="week8Friday">
         Friday<br>
 Take the day off completely, and focus<br>
 on using some self-massage to work the lactic acid out of your muscles.<br>
 You should also increase your water intake here to improve your recuperation. 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week8Saturday" aria-expanded="false" aria-controls="week8Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week8Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week8Saturday">
+    </div>
+    <div class="dayLong week8" id="week8Saturday">
         Saturday<br>
 Today contains the second "big target"<br>
 set of the week, though this one is designed to be done completely in an<br>
@@ -1753,11 +1765,11 @@ DAILY TOTAL: 2:20<br>
 WEEK-TO-DATE: 8:20
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week8Sunday" aria-expanded="false" aria-controls="week8Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week8Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week8Sunday">
+    </div>
+    <div class="dayLong week8" id="week8Sunday">
         Sunday<br>
 <br>
 RUN 1:15<br>
@@ -1775,18 +1787,20 @@ WEEK-TO-DATE: 10:15
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 9
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week9Monday" aria-expanded="false" aria-controls="week9Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 9 
+        <a class="weekToggle" href="#" data-target="week9" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week9" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week9Monday">
         Monday
-    </button>
-    <div class="collapse" id="week9Monday">
+    </div>
+    <div class="dayLong week9" id="week9Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -1812,11 +1826,11 @@ some additional aerobic "bulk" to your long week. Keep your HR between<br>
 DAILY TOTAL: 1:20
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week9Tuesday" aria-expanded="false" aria-controls="week9Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week9Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week9Tuesday">
+    </div>
+    <div class="dayLong week9" id="week9Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:10<br>
@@ -1848,11 +1862,11 @@ DAILY TOTAL: 1:50<br>
 WEEK-TO-DATE: 3:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week9Wednesday" aria-expanded="false" aria-controls="week9Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week9Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week9Wednesday">
+    </div>
+    <div class="dayLong week9" id="week9Wednesday">
         Wednesday<br>
 <br>
 SWIM 0:45<br>
@@ -1887,11 +1901,11 @@ DAILY TOTAL: 1:35<br>
 WEEK-TO-DATE: 4:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week9Thursday" aria-expanded="false" aria-controls="week9Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week9Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week9Thursday">
+    </div>
+    <div class="dayLong week9" id="week9Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -1922,11 +1936,11 @@ DAILY TOTAL: 1:55<br>
 WEEK-TO-DATE: 6:40
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week9Friday" aria-expanded="false" aria-controls="week9Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week9Friday">
         Friday
-    </button>
-    <div class="collapse" id="week9Friday">
+    </div>
+    <div class="dayLong week9" id="week9Friday">
         Friday<br>
 Total recovery day. These recuperation<br>
 periods are extremely important to enable your body to strengthen itself<br>
@@ -1934,11 +1948,11 @@ periods are extremely important to enable your body to strengthen itself<br>
 periods of stress -- they're only made during periods of recovery. 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week9Saturday" aria-expanded="false" aria-controls="week9Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week9Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week9Saturday">
+    </div>
+    <div class="dayLong week9" id="week9Saturday">
         Saturday<br>
 This is one of the longest (perhaps<br>
 the longest) cycling sessions we've had so far -- if you<br>
@@ -1987,11 +2001,11 @@ DAILY TOTAL: 2:55<br>
 WEEK-TO-DATE: 9:35
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week9Sunday" aria-expanded="false" aria-controls="week9Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week9Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week9Sunday">
+    </div>
+    <div class="dayLong week9" id="week9Sunday">
         Sunday, 2/2<br>
 <br>
 RUN 1:30<br>
@@ -2024,18 +2038,20 @@ WEEK-TO-DATE: 11:55
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 10
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week10Monday" aria-expanded="false" aria-controls="week10Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 10 
+        <a class="weekToggle" href="#" data-target="week10" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week10" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week10Monday">
         Monday
-    </button>
-    <div class="collapse" id="week10Monday">
+    </div>
+    <div class="dayLong week10" id="week10Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -2057,27 +2073,27 @@ by the end<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week10Tuesday" aria-expanded="false" aria-controls="week10Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week10Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week10Tuesday">
+    </div>
+    <div class="dayLong week10" id="week10Tuesday">
         
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week10Wednesday" aria-expanded="false" aria-controls="week10Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week10Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week10Wednesday">
+    </div>
+    <div class="dayLong week10" id="week10Wednesday">
         Wednesday (swimming),
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week10Thursday" aria-expanded="false" aria-controls="week10Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week10Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week10Thursday">
+    </div>
+    <div class="dayLong week10" id="week10Thursday">
         Thursday (running),<br>
 and Saturday (cycling). Be sure to direct your energies accordingly.<br>
 Monday<br>
@@ -2200,19 +2216,19 @@ DAILY TOTAL: 1:40<br>
 WEEK-TO-DATE: 6:05
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week10Friday" aria-expanded="false" aria-controls="week10Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week10Friday">
         Friday
-    </button>
-    <div class="collapse" id="week10Friday">
+    </div>
+    <div class="dayLong week10" id="week10Friday">
         
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week10Saturday" aria-expanded="false" aria-controls="week10Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week10Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week10Saturday">
+    </div>
+    <div class="dayLong week10" id="week10Saturday">
         Saturday (cycling). Be sure to direct your energies accordingly.<br>
 Monday<br>
 <br>
@@ -2377,11 +2393,11 @@ DAILY TOTAL: 1:45<br>
 WEEK-TO-DATE: 7:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week10Sunday" aria-expanded="false" aria-controls="week10Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week10Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week10Sunday">
+    </div>
+    <div class="dayLong week10" id="week10Sunday">
         Sunday<br>
 <br>
 RUN 1:20<br>
@@ -2399,18 +2415,20 @@ WEEK-TO-DATE: 9:50
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 11
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week11Monday" aria-expanded="false" aria-controls="week11Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 11 
+        <a class="weekToggle" href="#" data-target="week11" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week11" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week11Monday">
         Monday
-    </button>
-    <div class="collapse" id="week11Monday">
+    </div>
+    <div class="dayLong week11" id="week11Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -2446,11 +2464,11 @@ Finish with:<br>
 DAILY TOTAL: 1:25
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week11Tuesday" aria-expanded="false" aria-controls="week11Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week11Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week11Tuesday">
+    </div>
+    <div class="dayLong week11" id="week11Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:15<br>
@@ -2485,11 +2503,11 @@ DAILY TOTAL: 2:00<br>
 WEEK-TO-DATE: 3:25
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week11Wednesday" aria-expanded="false" aria-controls="week11Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week11Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week11Wednesday">
+    </div>
+    <div class="dayLong week11" id="week11Wednesday">
         Wednesday<br>
 <br>
 SWIM 0:45<br>
@@ -2532,11 +2550,11 @@ DAILY TOTAL: 1:45<br>
 WEEK-TO-DATE: 5:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week11Thursday" aria-expanded="false" aria-controls="week11Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week11Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week11Thursday">
+    </div>
+    <div class="dayLong week11" id="week11Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -2569,19 +2587,19 @@ DAILY TOTAL: 2:05<br>
 WEEK-TO-DATE: 7:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week11Friday" aria-expanded="false" aria-controls="week11Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week11Friday">
         Friday
-    </button>
-    <div class="collapse" id="week11Friday">
+    </div>
+    <div class="dayLong week11" id="week11Friday">
         Friday - Rest Day
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week11Saturday" aria-expanded="false" aria-controls="week11Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week11Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week11Saturday">
+    </div>
+    <div class="dayLong week11" id="week11Saturday">
         Saturday<br>
 <br>
 BIKE 2:30<br>
@@ -2638,11 +2656,11 @@ DAILY TOTAL: 3:15<br>
 WEEK-TO-DATE: 10:30
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week11Sunday" aria-expanded="false" aria-controls="week11Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week11Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week11Sunday">
+    </div>
+    <div class="dayLong week11" id="week11Sunday">
         Sunday<br>
 <br>
 RUN 1:40<br>
@@ -2684,18 +2702,20 @@ WEEK-TO-DATE: 13:10
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 12
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week12Monday" aria-expanded="false" aria-controls="week12Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 12 
+        <a class="weekToggle" href="#" data-target="week12" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week12" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week12Monday">
         Monday
-    </button>
-    <div class="collapse" id="week12Monday">
+    </div>
+    <div class="dayLong week12" id="week12Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -2713,11 +2733,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week12Tuesday" aria-expanded="false" aria-controls="week12Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week12Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week12Tuesday">
+    </div>
+    <div class="dayLong week12" id="week12Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:20<br>
@@ -2746,11 +2766,11 @@ DAILY TOTAL: 2:00<br>
 WEEK-TO-DATE: 2:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week12Wednesday" aria-expanded="false" aria-controls="week12Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week12Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week12Wednesday">
+    </div>
+    <div class="dayLong week12" id="week12Wednesday">
         Wednesday<br>
 <br>
 SWIM 1:00<br>
@@ -2801,11 +2821,11 @@ DAILY TOTAL: 2:05<br>
 WEEK-TO-DATE: 4:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week12Thursday" aria-expanded="false" aria-controls="week12Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week12Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week12Thursday">
+    </div>
+    <div class="dayLong week12" id="week12Thursday">
         Thursday<br>
 <br>
 SWIM 0:45<br>
@@ -2829,20 +2849,20 @@ DAILY TOTAL: 1:35<br>
 WEEK-TO-DATE: 6:25
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week12Friday" aria-expanded="false" aria-controls="week12Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week12Friday">
         Friday
-    </button>
-    <div class="collapse" id="week12Friday">
+    </div>
+    <div class="dayLong week12" id="week12Friday">
         Friday<br>
 Big rest day, as usual.
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week12Saturday" aria-expanded="false" aria-controls="week12Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week12Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week12Saturday">
+    </div>
+    <div class="dayLong week12" id="week12Saturday">
         Saturday<br>
 <br>
 BIKE 2:05<br>
@@ -2882,11 +2902,11 @@ DAILY TOTAL: 2:40<br>
 WEEK-TO-DATE: 9:05
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week12Sunday" aria-expanded="false" aria-controls="week12Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week12Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week12Sunday">
+    </div>
+    <div class="dayLong week12" id="week12Sunday">
         Sunday<br>
 <br>
 RUN 1:25<br>
@@ -2908,18 +2928,20 @@ WEEK-TO-DATE: 11:15
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 13
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week13Monday" aria-expanded="false" aria-controls="week13Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 13 
+        <a class="weekToggle" href="#" data-target="week13" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week13" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week13Monday">
         Monday
-    </button>
-    <div class="collapse" id="week13Monday">
+    </div>
+    <div class="dayLong week13" id="week13Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -2937,11 +2959,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week13Tuesday" aria-expanded="false" aria-controls="week13Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week13Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week13Tuesday">
+    </div>
+    <div class="dayLong week13" id="week13Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:05<br>
@@ -2976,11 +2998,11 @@ DAILY TOTAL: 1:50<br>
 WEEK-TO-DATE: 2:35
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week13Wednesday" aria-expanded="false" aria-controls="week13Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week13Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week13Wednesday">
+    </div>
+    <div class="dayLong week13" id="week13Wednesday">
         Wednesday<br>
 <br>
 SWIM 0:45<br>
@@ -3015,11 +3037,11 @@ DAILY TOTAL: 1:40<br>
 WEEK-TO-DATE: 4:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week13Thursday" aria-expanded="false" aria-controls="week13Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week13Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week13Thursday">
+    </div>
+    <div class="dayLong week13" id="week13Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -3056,19 +3078,19 @@ DAILY TOTAL: 1:55<br>
 WEEK-TO-DATE: 6:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week13Friday" aria-expanded="false" aria-controls="week13Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week13Friday">
         Friday
-    </button>
-    <div class="collapse" id="week13Friday">
+    </div>
+    <div class="dayLong week13" id="week13Friday">
         Friday - Rest Day
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week13Saturday" aria-expanded="false" aria-controls="week13Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week13Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week13Saturday">
+    </div>
+    <div class="dayLong week13" id="week13Saturday">
         Saturday<br>
 <br>
 BIKE 1:45<br>
@@ -3089,11 +3111,11 @@ DAILY TOTAL: 1:45<br>
 WEEK-TO-DATE: 7:55
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week13Sunday" aria-expanded="false" aria-controls="week13Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week13Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week13Sunday">
+    </div>
+    <div class="dayLong week13" id="week13Sunday">
         Sunday<br>
 <br>
 RUN 1:20<br>
@@ -3111,18 +3133,20 @@ WEEK-TO-DATE: 9:55
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 14
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week14Monday" aria-expanded="false" aria-controls="week14Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 14 
+        <a class="weekToggle" href="#" data-target="week14" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week14" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week14Monday">
         Monday
-    </button>
-    <div class="collapse" id="week14Monday">
+    </div>
+    <div class="dayLong week14" id="week14Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -3139,11 +3163,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week14Tuesday" aria-expanded="false" aria-controls="week14Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week14Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week14Tuesday">
+    </div>
+    <div class="dayLong week14" id="week14Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:15<br>
@@ -3180,11 +3204,11 @@ DAILY TOTAL: 2:05<br>
 WEEK-TO-DATE: 2:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week14Wednesday" aria-expanded="false" aria-controls="week14Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week14Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week14Wednesday">
+    </div>
+    <div class="dayLong week14" id="week14Wednesday">
         Wednesday<br>
 <br>
 SWIM 1:00<br>
@@ -3228,11 +3252,11 @@ DAILY TOTAL: 2:00<br>
 WEEK-TO-DATE: 4:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week14Thursday" aria-expanded="false" aria-controls="week14Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week14Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week14Thursday">
+    </div>
+    <div class="dayLong week14" id="week14Thursday">
         Thursday<br>
 <br>
 SWIM 0:45<br>
@@ -3268,19 +3292,19 @@ DAILY TOTAL: 1:45<br>
 WEEK-TO-DATE: 6:35
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week14Friday" aria-expanded="false" aria-controls="week14Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week14Friday">
         Friday
-    </button>
-    <div class="collapse" id="week14Friday">
+    </div>
+    <div class="dayLong week14" id="week14Friday">
         Friday - Rest Day
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week14Saturday" aria-expanded="false" aria-controls="week14Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week14Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week14Saturday">
+    </div>
+    <div class="dayLong week14" id="week14Saturday">
         Saturday<br>
 <br>
 BIKE 2:00<br>
@@ -3316,11 +3340,11 @@ DAILY TOTAL: 2:00<br>
 WEEK-TO-DATE: 8:35
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week14Sunday" aria-expanded="false" aria-controls="week14Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week14Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week14Sunday">
+    </div>
+    <div class="dayLong week14" id="week14Sunday">
         Sunday<br>
 This is the end of a particularly<br>
 hard week, and you've successfully gotten through the longest, toughest<br>
@@ -3345,18 +3369,20 @@ WEEK-TO-DATE: 10:50
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 15
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week15Monday" aria-expanded="false" aria-controls="week15Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 15 
+        <a class="weekToggle" href="#" data-target="week15" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week15" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week15Monday">
         Monday
-    </button>
-    <div class="collapse" id="week15Monday">
+    </div>
+    <div class="dayLong week15" id="week15Monday">
         Monday,<br>
 <br>
 SWIM 0:45<br>
@@ -3377,11 +3403,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week15Tuesday" aria-expanded="false" aria-controls="week15Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week15Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week15Tuesday">
+    </div>
+    <div class="dayLong week15" id="week15Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:15<br>
@@ -3417,11 +3443,11 @@ DAILY TOTAL: 2:05<br>
 WEEK-TO-DATE: 2:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week15Wednesday" aria-expanded="false" aria-controls="week15Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week15Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week15Wednesday">
+    </div>
+    <div class="dayLong week15" id="week15Wednesday">
         Wednesday<br>
 <br>
 SWIM 0:45<br>
@@ -3456,11 +3482,11 @@ DAILY TOTAL: 1:45<br>
 WEEK-TO-DATE: 4:35
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week15Thursday" aria-expanded="false" aria-controls="week15Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week15Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week15Thursday">
+    </div>
+    <div class="dayLong week15" id="week15Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -3493,20 +3519,20 @@ DAILY TOTAL: 2:00<br>
 WEEK-TO-DATE: 6:35
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week15Friday" aria-expanded="false" aria-controls="week15Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week15Friday">
         Friday
-    </button>
-    <div class="collapse" id="week15Friday">
+    </div>
+    <div class="dayLong week15" id="week15Friday">
         Friday<br>
 Total recovery day.
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week15Saturday" aria-expanded="false" aria-controls="week15Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week15Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week15Saturday">
+    </div>
+    <div class="dayLong week15" id="week15Saturday">
         Saturday<br>
 <br>
 BIKE 2:00<br>
@@ -3532,11 +3558,11 @@ DAILY TOTAL: 2:00<br>
 WEEK-TO-DATE: 8:35
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week15Sunday" aria-expanded="false" aria-controls="week15Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week15Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week15Sunday">
+    </div>
+    <div class="dayLong week15" id="week15Sunday">
         Sunday<br>
 <br>
 RUN 1:30<br>
@@ -3554,18 +3580,20 @@ WEEK-TO-DATE: 10:50
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 16
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week16Monday" aria-expanded="false" aria-controls="week16Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 16 
+        <a class="weekToggle" href="#" data-target="week16" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week16" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week16Monday">
         Monday
-    </button>
-    <div class="collapse" id="week16Monday">
+    </div>
+    <div class="dayLong week16" id="week16Monday">
         Monday.<br>
 <br>
 SWIM 0:45<br>
@@ -3583,11 +3611,11 @@ begin @84%, then reduce the intensity to below 60% by<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week16Tuesday" aria-expanded="false" aria-controls="week16Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week16Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week16Tuesday">
+    </div>
+    <div class="dayLong week16" id="week16Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:30<br>
@@ -3619,11 +3647,11 @@ DAILY TOTAL: 2:10<br>
 WEEK-TO-DATE: 2:55
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week16Wednesday" aria-expanded="false" aria-controls="week16Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week16Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week16Wednesday">
+    </div>
+    <div class="dayLong week16" id="week16Wednesday">
         Wednesday<br>
 <br>
 SWIM 1:00<br>
@@ -3665,11 +3693,11 @@ DAILY TOTAL: 2:10<br>
 WEEK-TO-DATE: 5:05
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week16Thursday" aria-expanded="false" aria-controls="week16Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week16Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week16Thursday">
+    </div>
+    <div class="dayLong week16" id="week16Thursday">
         Thursday<br>
 <br>
 SWIM 0:45<br>
@@ -3712,20 +3740,20 @@ DAILY TOTAL: 1:45<br>
 WEEK-TO-DATE: 6:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week16Friday" aria-expanded="false" aria-controls="week16Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week16Friday">
         Friday
-    </button>
-    <div class="collapse" id="week16Friday">
+    </div>
+    <div class="dayLong week16" id="week16Friday">
         Friday<br>
 Big rest day, as usual.
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week16Saturday" aria-expanded="false" aria-controls="week16Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week16Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week16Saturday">
+    </div>
+    <div class="dayLong week16" id="week16Saturday">
         Saturday<br>
 <br>
 BIKE 2:20<br>
@@ -3767,11 +3795,11 @@ DAILY TOTAL: 3:00<br>
 WEEK-TO-DATE: 9:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week16Sunday" aria-expanded="false" aria-controls="week16Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week16Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week16Sunday">
+    </div>
+    <div class="dayLong week16" id="week16Sunday">
         Sunday<br>
 <br>
 RUN 1:45<br>
@@ -3793,18 +3821,20 @@ WEEK-TO-DATE: 12:30
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 17
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week17Monday" aria-expanded="false" aria-controls="week17Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 17 
+        <a class="weekToggle" href="#" data-target="week17" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week17" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week17Monday">
         Monday
-    </button>
-    <div class="collapse" id="week17Monday">
+    </div>
+    <div class="dayLong week17" id="week17Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -3833,11 +3863,11 @@ end.<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week17Tuesday" aria-expanded="false" aria-controls="week17Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week17Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week17Tuesday">
+    </div>
+    <div class="dayLong week17" id="week17Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:25<br>
@@ -3865,11 +3895,11 @@ DAILY TOTAL: 2:15<br>
 WEEK-TO-DATE: 3:40
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week17Wednesday" aria-expanded="false" aria-controls="week17Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week17Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week17Wednesday">
+    </div>
+    <div class="dayLong week17" id="week17Wednesday">
         Wednesday<br>
 <br>
 SWIM 0:45<br>
@@ -3907,11 +3937,11 @@ DAILY TOTAL: 1:50<br>
 WEEK-TO-DATE: 5:30
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week17Thursday" aria-expanded="false" aria-controls="week17Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week17Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week17Thursday">
+    </div>
+    <div class="dayLong week17" id="week17Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -3947,20 +3977,20 @@ DAILY TOTAL: 2:10<br>
 WEEK-TO-DATE: 7:40
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week17Friday" aria-expanded="false" aria-controls="week17Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week17Friday">
         Friday
-    </button>
-    <div class="collapse" id="week17Friday">
+    </div>
+    <div class="dayLong week17" id="week17Friday">
         Friday<br>
 Big rest day
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week17Saturday" aria-expanded="false" aria-controls="week17Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week17Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week17Saturday">
+    </div>
+    <div class="dayLong week17" id="week17Saturday">
         Saturday<br>
 <br>
 BIKE 2:50<br>
@@ -4001,11 +4031,11 @@ DAILY TOTAL: 3:40<br>
 WEEK-TO-DATE: 11:20
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week17Sunday" aria-expanded="false" aria-controls="week17Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week17Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week17Sunday">
+    </div>
+    <div class="dayLong week17" id="week17Sunday">
         Sunday<br>
 <br>
 RUN 1:55<br>
@@ -4043,18 +4073,20 @@ WEEK-TO-DATE: 14:20
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 18
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week18Monday" aria-expanded="false" aria-controls="week18Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 18 
+        <a class="weekToggle" href="#" data-target="week18" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week18" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week18Monday">
         Monday
-    </button>
-    <div class="collapse" id="week18Monday">
+    </div>
+    <div class="dayLong week18" id="week18Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -4071,11 +4103,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week18Tuesday" aria-expanded="false" aria-controls="week18Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week18Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week18Tuesday">
+    </div>
+    <div class="dayLong week18" id="week18Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:25<br>
@@ -4103,11 +4135,11 @@ DAILY TOTAL: 2:20<br>
 WEEK-TO-DATE: 3:05
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week18Wednesday" aria-expanded="false" aria-controls="week18Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week18Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week18Wednesday">
+    </div>
+    <div class="dayLong week18" id="week18Wednesday">
         Wednesday<br>
 <br>
 SWIM 1:00<br>
@@ -4148,11 +4180,11 @@ DAILY TOTAL: 2:15<br>
 WEEK-TO-DATE: 5:20
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week18Thursday" aria-expanded="false" aria-controls="week18Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week18Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week18Thursday">
+    </div>
+    <div class="dayLong week18" id="week18Thursday">
         Thursday<br>
 <br>
 SWIM 0:45<br>
@@ -4188,21 +4220,21 @@ DAILY TOTAL: 1:55<br>
 WEEK-TO-DATE: 7:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week18Friday" aria-expanded="false" aria-controls="week18Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week18Friday">
         Friday
-    </button>
-    <div class="collapse" id="week18Friday">
+    </div>
+    <div class="dayLong week18" id="week18Friday">
         Friday<br>
 Take the day off your feet, relax and<br>
 regroup before tomorrow.
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week18Saturday" aria-expanded="false" aria-controls="week18Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week18Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week18Saturday">
+    </div>
+    <div class="dayLong week18" id="week18Saturday">
         Saturday<br>
 <br>
 BIKE 2:15<br>
@@ -4244,11 +4276,11 @@ DAILY TOTAL: 2:15<br>
 WEEK-TO-DATE: 9:30
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week18Sunday" aria-expanded="false" aria-controls="week18Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week18Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week18Sunday">
+    </div>
+    <div class="dayLong week18" id="week18Sunday">
         Sunday<br>
 Hopefully you've been handling the<br>
 increase in hours and intensity thus far. Hard workouts will soon take<br>
@@ -4268,18 +4300,20 @@ WEEK-TO-DATE: 12:00
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 19
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week19Monday" aria-expanded="false" aria-controls="week19Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 19 
+        <a class="weekToggle" href="#" data-target="week19" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week19" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week19Monday">
         Monday
-    </button>
-    <div class="collapse" id="week19Monday">
+    </div>
+    <div class="dayLong week19" id="week19Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -4296,11 +4330,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week19Tuesday" aria-expanded="false" aria-controls="week19Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week19Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week19Tuesday">
+    </div>
+    <div class="dayLong week19" id="week19Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:30<br>
@@ -4330,11 +4364,11 @@ DAILY TOTAL: 2:25<br>
 WEEK-TO-DATE: 3:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week19Wednesday" aria-expanded="false" aria-controls="week19Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week19Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week19Wednesday">
+    </div>
+    <div class="dayLong week19" id="week19Wednesday">
         Wednesday<br>
 <br>
 SWIM 0:45<br>
@@ -4365,11 +4399,11 @@ DAILY TOTAL: 2:00<br>
 WEEK-TO-DATE: 5:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week19Thursday" aria-expanded="false" aria-controls="week19Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week19Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week19Thursday">
+    </div>
+    <div class="dayLong week19" id="week19Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -4403,21 +4437,21 @@ DAILY TOTAL: 2:05<br>
 WEEK-TO-DATE: 7:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week19Friday" aria-expanded="false" aria-controls="week19Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week19Friday">
         Friday
-    </button>
-    <div class="collapse" id="week19Friday">
+    </div>
+    <div class="dayLong week19" id="week19Friday">
         Friday<br>
 Total recovery day. Relax and put<br>
 your feet up...
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week19Saturday" aria-expanded="false" aria-controls="week19Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week19Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week19Saturday">
+    </div>
+    <div class="dayLong week19" id="week19Saturday">
         Saturday<br>
 This session, as usual, is written<br>
 for those who are stuck indoors. April can be a very fickle month weather-wise...if<br>
@@ -4443,11 +4477,11 @@ DAILY TOTAL: 2:25<br>
 WEEK-TO-DATE: 9:40
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week19Sunday" aria-expanded="false" aria-controls="week19Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week19Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week19Sunday">
+    </div>
+    <div class="dayLong week19" id="week19Sunday">
         Sunday<br>
 <br>
 RUN 1:35<br>
@@ -4465,18 +4499,20 @@ WEEK-TO-DATE: 12:10
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 20
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week20Monday" aria-expanded="false" aria-controls="week20Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 20 
+        <a class="weekToggle" href="#" data-target="week20" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week20" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week20Monday">
         Monday
-    </button>
-    <div class="collapse" id="week20Monday">
+    </div>
+    <div class="dayLong week20" id="week20Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -4509,11 +4545,11 @@ end.<br>
 DAILY TOTAL: 1:35
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week20Tuesday" aria-expanded="false" aria-controls="week20Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week20Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week20Tuesday">
+    </div>
+    <div class="dayLong week20" id="week20Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:40<br>
@@ -4549,11 +4585,11 @@ DAILY TOTAL: 2:35<br>
 WEEK-TO-DATE: 4:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week20Wednesday" aria-expanded="false" aria-controls="week20Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week20Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week20Wednesday">
+    </div>
+    <div class="dayLong week20" id="week20Wednesday">
         Wednesday<br>
 <br>
 SWIM 0:45<br>
@@ -4592,11 +4628,11 @@ DAILY TOTAL: 2:05<br>
 WEEK-TO-DATE: 6:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week20Thursday" aria-expanded="false" aria-controls="week20Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week20Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week20Thursday">
+    </div>
+    <div class="dayLong week20" id="week20Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -4634,21 +4670,21 @@ DAILY TOTAL: 2:15<br>
 WEEK-TO-DATE: 8:30
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week20Friday" aria-expanded="false" aria-controls="week20Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week20Friday">
         Friday
-    </button>
-    <div class="collapse" id="week20Friday">
+    </div>
+    <div class="dayLong week20" id="week20Friday">
         Friday<br>
 Big recovery day...relax, take a load<br>
 off your feet, and hydrate like crazy. Big weekend ahead!
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week20Saturday" aria-expanded="false" aria-controls="week20Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week20Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week20Saturday">
+    </div>
+    <div class="dayLong week20" id="week20Saturday">
         Saturday<br>
 <br>
 BIKE 3:25<br>
@@ -4705,11 +4741,11 @@ DAILY TOTAL: 4:15<br>
 WEEK-TO-DATE: 12:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week20Sunday" aria-expanded="false" aria-controls="week20Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week20Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week20Sunday">
+    </div>
+    <div class="dayLong week20" id="week20Sunday">
         Sunday<br>
 <br>
 RUN 2:00<br>
@@ -4756,18 +4792,20 @@ WEEK-TO-DATE: 16:00
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 21
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week21Monday" aria-expanded="false" aria-controls="week21Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 21 
+        <a class="weekToggle" href="#" data-target="week21" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week21" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week21Monday">
         Monday
-    </button>
-    <div class="collapse" id="week21Monday">
+    </div>
+    <div class="dayLong week21" id="week21Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -4786,11 +4824,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week21Tuesday" aria-expanded="false" aria-controls="week21Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week21Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week21Tuesday">
+    </div>
+    <div class="dayLong week21" id="week21Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:40<br>
@@ -4824,11 +4862,11 @@ DAILY TOTAL: 2:25<br>
 WEEK-TO-DATE: 3:40
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week21Wednesday" aria-expanded="false" aria-controls="week21Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week21Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week21Wednesday">
+    </div>
+    <div class="dayLong week21" id="week21Wednesday">
         Wednesday<br>
 <br>
 SWIM 1:00<br>
@@ -4874,11 +4912,11 @@ DAILY TOTAL: 2:15<br>
 WEEK-TO-DATE: 5:55
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week21Thursday" aria-expanded="false" aria-controls="week21Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week21Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week21Thursday">
+    </div>
+    <div class="dayLong week21" id="week21Thursday">
         Thursday<br>
 <br>
 SWIM 0:45<br>
@@ -4910,19 +4948,19 @@ DAILY TOTAL: 1:50<br>
 WEEK-TO-DATE: 7:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week21Friday" aria-expanded="false" aria-controls="week21Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week21Friday">
         Friday
-    </button>
-    <div class="collapse" id="week21Friday">
+    </div>
+    <div class="dayLong week21" id="week21Friday">
         Friday - Rest Day
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week21Saturday" aria-expanded="false" aria-controls="week21Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week21Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week21Saturday">
+    </div>
+    <div class="dayLong week21" id="week21Saturday">
         Saturday<br>
 <br>
 BIKE 2:50<br>
@@ -4973,11 +5011,11 @@ DAILY TOTAL: 3:30<br>
 WEEK-TO-DATE: 11:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week21Sunday" aria-expanded="false" aria-controls="week21Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week21Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week21Sunday">
+    </div>
+    <div class="dayLong week21" id="week21Sunday">
         Sunday<br>
 <br>
 RUN 1:40<br>
@@ -5005,18 +5043,20 @@ WEEK-TO-DATE: 13:45
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 22
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week22Monday" aria-expanded="false" aria-controls="week22Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 22 
+        <a class="weekToggle" href="#" data-target="week22" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week22" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week22Monday">
         Monday
-    </button>
-    <div class="collapse" id="week22Monday">
+    </div>
+    <div class="dayLong week22" id="week22Monday">
         Monday<br>
 <br>
 SWIM 0:45<br>
@@ -5033,11 +5073,11 @@ COOL DOWN<br>
 DAILY TOTAL: 0:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week22Tuesday" aria-expanded="false" aria-controls="week22Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week22Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week22Tuesday">
+    </div>
+    <div class="dayLong week22" id="week22Tuesday">
         Tuesday<br>
 <br>
 BIKE 1:40<br>
@@ -5071,11 +5111,11 @@ DAILY TOTAL: 2:40<br>
 WEEK-TO-DATE: 3:25
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week22Wednesday" aria-expanded="false" aria-controls="week22Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week22Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week22Wednesday">
+    </div>
+    <div class="dayLong week22" id="week22Wednesday">
         Wednesday<br>
 <br>
 SWIM 1:00<br>
@@ -5117,11 +5157,11 @@ DAILY TOTAL: 2:20<br>
 WEEK-TO-DATE: 5:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week22Thursday" aria-expanded="false" aria-controls="week22Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week22Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week22Thursday">
+    </div>
+    <div class="dayLong week22" id="week22Thursday">
         Thursday<br>
 <br>
 SWIM 0:45<br>
@@ -5156,11 +5196,11 @@ DAILY TOTAL: 2:00<br>
 WEEK-TO-DATE: 7:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week22Friday" aria-expanded="false" aria-controls="week22Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week22Friday">
         Friday
-    </button>
-    <div class="collapse" id="week22Friday">
+    </div>
+    <div class="dayLong week22" id="week22Friday">
         Friday<br>
 You've had a particularly tough last<br>
 three days, especially Tuesday's ride & run, Wednesday's swim, and<br>
@@ -5168,11 +5208,11 @@ yesterday's track workout. You'll need this day off to regroup before a<br>
 tough weekend.
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week22Saturday" aria-expanded="false" aria-controls="week22Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week22Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week22Saturday">
+    </div>
+    <div class="dayLong week22" id="week22Saturday">
         Saturday<br>
 <br>
 BIKE 2:45<br>
@@ -5181,11 +5221,11 @@ and the others should head outdoors if the weather is cooperating. Also,<br>
 it's perfectly fine to swap Saturday's sessions with
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week22Sunday" aria-expanded="false" aria-controls="week22Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week22Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week22Sunday">
+    </div>
+    <div class="dayLong week22" id="week22Sunday">
         Sunday's, which is<br>
 pretty useful if it's raining on Saturday and the forecast calls for sunny<br>
 skies the next day -- keep that in mind throughout the warmer months.<br>
@@ -5237,28 +5277,30 @@ WEEK-TO-DATE: 13:15
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 23
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week23Monday" aria-expanded="false" aria-controls="week23Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 23 
+        <a class="weekToggle" href="#" data-target="week23" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week23" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week23Monday">
         Monday
-    </button>
-    <div class="collapse" id="week23Monday">
+    </div>
+    <div class="dayLong week23" id="week23Monday">
         Monday<br>
 We'll begin the Competitive Season<br>
 in a strange, understated way: Off your feet!
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week23Tuesday" aria-expanded="false" aria-controls="week23Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week23Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week23Tuesday">
+    </div>
+    <div class="dayLong week23" id="week23Tuesday">
         Tuesday<br>
 <br>
 SWIM 0:45<br>
@@ -5307,11 +5349,11 @@ it's under 50% by the end<br>
 DAILY TOTAL: 1:55
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week23Wednesday" aria-expanded="false" aria-controls="week23Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week23Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week23Wednesday">
+    </div>
+    <div class="dayLong week23" id="week23Wednesday">
         Wednesday<br>
 <br>
 RUN 1:00<br>
@@ -5343,11 +5385,11 @@ DAILY TOTAL: 2:25<br>
 WEEK-TO-DATE: 4:20
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week23Thursday" aria-expanded="false" aria-controls="week23Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week23Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week23Thursday">
+    </div>
+    <div class="dayLong week23" id="week23Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -5379,11 +5421,11 @@ DAILY TOTAL: 1:50<br>
 WEEK-TO-DATE: 6:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week23Friday" aria-expanded="false" aria-controls="week23Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week23Friday">
         Friday
-    </button>
-    <div class="collapse" id="week23Friday">
+    </div>
+    <div class="dayLong week23" id="week23Friday">
         Friday<br>
 <br>
 SWIM 0:45<br>
@@ -5399,11 +5441,11 @@ DAILY TOTAL: 0:45<br>
 WEEK-TO-DATE: 6:55
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week23Saturday" aria-expanded="false" aria-controls="week23Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week23Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week23Saturday">
+    </div>
+    <div class="dayLong week23" id="week23Saturday">
         Saturday<br>
 This is the first scheduled "Saturday<br>
 triple". Notice that the run and swim can be scheduled together at the<br>
@@ -5452,11 +5494,11 @@ DAILY TOTAL: 4:00<br>
 WEEK-TO-DATE: 10:55
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week23Sunday" aria-expanded="false" aria-controls="week23Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week23Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week23Sunday">
+    </div>
+    <div class="dayLong week23" id="week23Sunday">
         Sunday<br>
 As a change of pace we'll switch the<br>
 order of events today: cycling first before running outdoors (don't switch<br>
@@ -5496,29 +5538,31 @@ WEEK-TO-DATE: 13:30
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 24
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week24Monday" aria-expanded="false" aria-controls="week24Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 24 
+        <a class="weekToggle" href="#" data-target="week24" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week24" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week24Monday">
         Monday
-    </button>
-    <div class="collapse" id="week24Monday">
+    </div>
+    <div class="dayLong week24" id="week24Monday">
         Monday<br>
 Take the day off here. (If, however,<br>
 your swimming situation provides for swimming on Mondays instead of Fridays,<br>
 then switch your Friday swim to today.) 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week24Tuesday" aria-expanded="false" aria-controls="week24Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week24Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week24Tuesday">
+    </div>
+    <div class="dayLong week24" id="week24Tuesday">
         Tuesday<br>
 <br>
 SWIM 0:45<br>
@@ -5561,11 +5605,11 @@ it's under 50% by the end<br>
 DAILY TOTAL: 2:05
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week24Wednesday" aria-expanded="false" aria-controls="week24Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week24Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week24Wednesday">
+    </div>
+    <div class="dayLong week24" id="week24Wednesday">
         Wednesday<br>
 <br>
 RUN 1:05<br>
@@ -5600,19 +5644,19 @@ DAILY TOTAL: 2:40<br>
 WEEK-TO-DATE: 4:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week24Thursday" aria-expanded="false" aria-controls="week24Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week24Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week24Thursday">
+    </div>
+    <div class="dayLong week24" id="week24Thursday">
         
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week24Friday" aria-expanded="false" aria-controls="week24Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week24Friday">
         Friday
-    </button>
-    <div class="collapse" id="week24Friday">
+    </div>
+    <div class="dayLong week24" id="week24Friday">
         Fridays,<br>
 then switch your Friday swim to today.) <br>
 Tuesday<br>
@@ -5733,11 +5777,11 @@ DAILY TOTAL: 0:45<br>
 WEEK-TO-DATE: 7:30
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week24Saturday" aria-expanded="false" aria-controls="week24Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week24Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week24Saturday">
+    </div>
+    <div class="dayLong week24" id="week24Saturday">
         Saturday<br>
 Another "Saturday triple". The run<br>
 and swim can be scheduled together at the pool (by water running) -- both<br>
@@ -5750,11 +5794,11 @@ is poor on Saturday, it's always fine to switch the Saturday ride/run with<br>
 the
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week24Sunday" aria-expanded="false" aria-controls="week24Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week24Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week24Sunday">
+    </div>
+    <div class="dayLong week24" id="week24Sunday">
         Sunday run/ride. Keep the swim on Saturday in these cases.) Here is<br>
 the indoor alternative if you're stuck in this situation:<br>
 WARM UP<br>
@@ -5828,27 +5872,29 @@ WEEK-TO-DATE: 15:20
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 25
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week25Monday" aria-expanded="false" aria-controls="week25Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 25 
+        <a class="weekToggle" href="#" data-target="week25" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week25" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week25Monday">
         Monday
-    </button>
-    <div class="collapse" id="week25Monday">
+    </div>
+    <div class="dayLong week25" id="week25Monday">
         Monday<br>
 Big recovery day.
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week25Tuesday" aria-expanded="false" aria-controls="week25Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week25Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week25Tuesday">
+    </div>
+    <div class="dayLong week25" id="week25Tuesday">
         Tuesday<br>
 <br>
 SWIM 0:45<br>
@@ -5883,21 +5929,21 @@ it's under 50% by the end<br>
 DAILY TOTAL: 2:00
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week25Wednesday" aria-expanded="false" aria-controls="week25Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week25Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week25Wednesday">
+    </div>
+    <div class="dayLong week25" id="week25Wednesday">
         Wednesday<br>
 Wednesday's focus continues to act<br>
 as a break between the higher intensity focus of Tuesday's bike ride and
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week25Thursday" aria-expanded="false" aria-controls="week25Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week25Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week25Thursday">
+    </div>
+    <div class="dayLong week25" id="week25Thursday">
         Thursday's track session. Monitor your body carefully today and keep the<br>
 intensity under control. Nothing hard today!<br>
 <br>
@@ -5973,11 +6019,11 @@ DAILY TOTAL: 1:55<br>
 WEEK-TO-DATE: 6:25
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week25Friday" aria-expanded="false" aria-controls="week25Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week25Friday">
         Friday
-    </button>
-    <div class="collapse" id="week25Friday">
+    </div>
+    <div class="dayLong week25" id="week25Friday">
         Friday<br>
 <br>
 SWIM 0:45<br>
@@ -5995,11 +6041,11 @@ DAILY TOTAL: 0:45<br>
 WEEK-TO-DATE: 7:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week25Saturday" aria-expanded="false" aria-controls="week25Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week25Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week25Saturday">
+    </div>
+    <div class="dayLong week25" id="week25Saturday">
         Saturday<br>
 You can approach these "Saturday triples"<br>
 as though they were a triathlon -- without the entry fee! In fact, feel<br>
@@ -6052,11 +6098,11 @@ DAILY TOTAL: 5:00<br>
 WEEK-TO-DATE: 12:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week25Sunday" aria-expanded="false" aria-controls="week25Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week25Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week25Sunday">
+    </div>
+    <div class="dayLong week25" id="week25Sunday">
         Sunday<br>
 <br>
 RUN 1:50<br>
@@ -6080,27 +6126,29 @@ WEEK-TO-DATE: 14:45
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 26
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week26Monday" aria-expanded="false" aria-controls="week26Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 26 
+        <a class="weekToggle" href="#" data-target="week26" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week26" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week26Monday">
         Monday
-    </button>
-    <div class="collapse" id="week26Monday">
+    </div>
+    <div class="dayLong week26" id="week26Monday">
         Monday<br>
 Recovery Day.
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week26Tuesday" aria-expanded="false" aria-controls="week26Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week26Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week26Tuesday">
+    </div>
+    <div class="dayLong week26" id="week26Tuesday">
         Tuesday<br>
 <br>
 SWIM 0:45<br>
@@ -6138,11 +6186,11 @@ it's under 50% by the end<br>
 DAILY TOTAL: 2:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week26Wednesday" aria-expanded="false" aria-controls="week26Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week26Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week26Wednesday">
+    </div>
+    <div class="dayLong week26" id="week26Wednesday">
         Wednesday<br>
 The primary focus on Wednesday is<br>
 to include some high quality, lower intensity aerobic work. You'll notice<br>
@@ -6177,11 +6225,11 @@ DAILY TOTAL: 2:50<br>
 WEEK-TO-DATE: 5:00
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week26Thursday" aria-expanded="false" aria-controls="week26Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week26Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week26Thursday">
+    </div>
+    <div class="dayLong week26" id="week26Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -6222,11 +6270,11 @@ DAILY TOTAL: 2:00<br>
 WEEK-TO-DATE: 7:00
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week26Friday" aria-expanded="false" aria-controls="week26Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week26Friday">
         Friday
-    </button>
-    <div class="collapse" id="week26Friday">
+    </div>
+    <div class="dayLong week26" id="week26Friday">
         Friday<br>
 <br>
 SWIM 0:45<br>
@@ -6245,11 +6293,11 @@ DAILY TOTAL: 0:45<br>
 WEEK-TO-DATE: 7:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week26Saturday" aria-expanded="false" aria-controls="week26Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week26Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week26Saturday">
+    </div>
+    <div class="dayLong week26" id="week26Saturday">
         Saturday<br>
 <br>
 BIKE 3:25<br>
@@ -6302,11 +6350,11 @@ DAILY TOTAL: 4:45<br>
 WEEK-TO-DATE: 12:30
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week26Sunday" aria-expanded="false" aria-controls="week26Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week26Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week26Sunday">
+    </div>
+    <div class="dayLong week26" id="week26Sunday">
         Sunday<br>
 <br>
 RUN 1:45<br>
@@ -6326,18 +6374,20 @@ WEEK-TO-DATE: 15:15
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 27
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week27Monday" aria-expanded="false" aria-controls="week27Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 27 
+        <a class="weekToggle" href="#" data-target="week27" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week27" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week27Monday">
         Monday
-    </button>
-    <div class="collapse" id="week27Monday">
+    </div>
+    <div class="dayLong week27" id="week27Monday">
         Monday<br>
 Total day off -- relax and allow your<br>
 body to rebuild.<br>
@@ -6345,11 +6395,11 @@ Remember, rest with as much intensity<br>
 as you train! 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week27Tuesday" aria-expanded="false" aria-controls="week27Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week27Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week27Tuesday">
+    </div>
+    <div class="dayLong week27" id="week27Tuesday">
         Tuesday<br>
 <br>
 SWIM 0:45<br>
@@ -6389,11 +6439,11 @@ gradually to 60% with 5:00 left, and finally below 50% by the end.<br>
 DAILY TOTAL: 1:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week27Wednesday" aria-expanded="false" aria-controls="week27Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week27Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week27Wednesday">
+    </div>
+    <div class="dayLong week27" id="week27Wednesday">
         Wednesday<br>
 <br>
 RUN 0:40<br>
@@ -6426,11 +6476,11 @@ DAILY TOTAL: 1:40<br>
 WEEK-TO-DATE: 3:25
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week27Thursday" aria-expanded="false" aria-controls="week27Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week27Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week27Thursday">
+    </div>
+    <div class="dayLong week27" id="week27Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -6466,11 +6516,11 @@ DAILY TOTAL: 1:50<br>
 WEEK-TO-DATE: 5:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week27Friday" aria-expanded="false" aria-controls="week27Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week27Friday">
         Friday
-    </button>
-    <div class="collapse" id="week27Friday">
+    </div>
+    <div class="dayLong week27" id="week27Friday">
         Friday<br>
 <br>
 SWIM 0:45<br>
@@ -6493,21 +6543,21 @@ This is the first "serious" weekend<br>
 of activity. The optimal layout involves a long ride on
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week27Saturday" aria-expanded="false" aria-controls="week27Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week27Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week27Saturday">
+    </div>
+    <div class="dayLong week27" id="week27Saturday">
         Saturday (anywhere<br>
 from 60-70 miles -- though you shouldn't worry about the total distance<br>
 covered) and an extended run-bike-run (a "bike sandwich") on
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week27Sunday" aria-expanded="false" aria-controls="week27Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week27Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week27Sunday">
+    </div>
+    <div class="dayLong week27" id="week27Sunday">
         Sunday.<br>
 The idea is to offer your body a solid<br>
 idea of what an extended duration of activity feels like. Ideally these<br>
@@ -6563,28 +6613,30 @@ WEEK-TO-DATE: 12:00
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 28
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week28Monday" aria-expanded="false" aria-controls="week28Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 28 
+        <a class="weekToggle" href="#" data-target="week28" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week28" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week28Monday">
         Monday
-    </button>
-    <div class="collapse" id="week28Monday">
+    </div>
+    <div class="dayLong week28" id="week28Monday">
         Monday<br>
 Total recovery day -- relax, recover,<br>
 stretch out, and enjoy... 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week28Tuesday" aria-expanded="false" aria-controls="week28Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week28Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week28Tuesday">
+    </div>
+    <div class="dayLong week28" id="week28Tuesday">
         Tuesday<br>
 <br>
 SWIM 0:45<br>
@@ -6614,11 +6666,11 @@ it's under 50% by the end<br>
 DAILY TOTAL: 2:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week28Wednesday" aria-expanded="false" aria-controls="week28Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week28Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week28Wednesday">
+    </div>
+    <div class="dayLong week28" id="week28Wednesday">
         Wednesday<br>
 Today's total is three hours -- the<br>
 maximum that we'll ever ask you to do on a weekday -- and you'll need to<br>
@@ -6661,11 +6713,11 @@ DAILY TOTAL: 3:00<br>
 WEEK-TO-DATE: 5:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week28Thursday" aria-expanded="false" aria-controls="week28Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week28Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week28Thursday">
+    </div>
+    <div class="dayLong week28" id="week28Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -6702,11 +6754,11 @@ DAILY TOTAL: 2:05<br>
 WEEK-TO-DATE: 7:20
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week28Friday" aria-expanded="false" aria-controls="week28Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week28Friday">
         Friday
-    </button>
-    <div class="collapse" id="week28Friday">
+    </div>
+    <div class="dayLong week28" id="week28Friday">
         Friday<br>
 <br>
 SWIM 0:45<br>
@@ -6737,11 +6789,11 @@ DAILY TOTAL: 1:45<br>
 WEEK-TO-DATE: 9:05
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week28Saturday" aria-expanded="false" aria-controls="week28Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week28Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week28Saturday">
+    </div>
+    <div class="dayLong week28" id="week28Saturday">
         Saturday<br>
 This is one of the epic "Iron Days"<br>
 that you'll have prior to your race, to instill confidence that your body,<br>
@@ -6770,11 +6822,11 @@ If the weather is awful today, then<br>
 feel free to switch the Saturday and
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week28Sunday" aria-expanded="false" aria-controls="week28Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week28Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week28Sunday">
+    </div>
+    <div class="dayLong week28" id="week28Sunday">
         Sunday schedules. Get out there and<br>
 enjoy!<br>
 RUN 0:50<br>
@@ -6823,28 +6875,30 @@ WEEK-TO-DATE: 17:00
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 29
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week29Monday" aria-expanded="false" aria-controls="week29Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 29 
+        <a class="weekToggle" href="#" data-target="week29" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week29" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week29Monday">
         Monday
-    </button>
-    <div class="collapse" id="week29Monday">
+    </div>
+    <div class="dayLong week29" id="week29Monday">
         Monday<br>
 Total day off -- you've earned it,<br>
 so kick your feet up and enjoy it! 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week29Tuesday" aria-expanded="false" aria-controls="week29Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week29Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week29Tuesday">
+    </div>
+    <div class="dayLong week29" id="week29Tuesday">
         Tuesday<br>
 <br>
 SWIM 0:45<br>
@@ -6877,11 +6931,11 @@ gradually to 60% with 5:00 left, and finally below 50% by the end.<br>
 DAILY TOTAL: 2:05
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week29Wednesday" aria-expanded="false" aria-controls="week29Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week29Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week29Wednesday">
+    </div>
+    <div class="dayLong week29" id="week29Wednesday">
         Wednesday<br>
 <br>
 RUN 1:30<br>
@@ -6918,11 +6972,11 @@ DAILY TOTAL: 3:30<br>
 WEEK-TO-DATE: 5:35
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week29Thursday" aria-expanded="false" aria-controls="week29Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week29Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week29Thursday">
+    </div>
+    <div class="dayLong week29" id="week29Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -6968,11 +7022,11 @@ DAILY TOTAL: 2:15<br>
 WEEK-TO-DATE: 7:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week29Friday" aria-expanded="false" aria-controls="week29Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week29Friday">
         Friday
-    </button>
-    <div class="collapse" id="week29Friday">
+    </div>
+    <div class="dayLong week29" id="week29Friday">
         Friday<br>
 By adding IM work to a swim<br>
 workout, you will get a lot more out of the time you are puttin in the<br>
@@ -7007,11 +7061,11 @@ even if the weather is suspect. That way, you will be used to varying conditions
 which you will more than likely encounter on race day.
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week29Saturday" aria-expanded="false" aria-controls="week29Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week29Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week29Saturday">
+    </div>
+    <div class="dayLong week29" id="week29Saturday">
         Saturday, 7/5<br>
 <br>
 BIKE 5:15<br>
@@ -7032,11 +7086,11 @@ DAILY TOTAL: 5:45<br>
 WEEK-TO-DATE: 14:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week29Sunday" aria-expanded="false" aria-controls="week29Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week29Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week29Sunday">
+    </div>
+    <div class="dayLong week29" id="week29Sunday">
         Sunday, 7/6<br>
 <br>
 RUN 1:45<br>
@@ -7056,28 +7110,30 @@ WEEK-TO-DATE: 18:20
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 30
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week30Monday" aria-expanded="false" aria-controls="week30Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 30 
+        <a class="weekToggle" href="#" data-target="week30" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week30" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week30Monday">
         Monday
-    </button>
-    <div class="collapse" id="week30Monday">
+    </div>
+    <div class="dayLong week30" id="week30Monday">
         Monday<br>
 Total recovery day -- relax, recover,<br>
 stretch out, and enjoy... 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week30Tuesday" aria-expanded="false" aria-controls="week30Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week30Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week30Tuesday">
+    </div>
+    <div class="dayLong week30" id="week30Tuesday">
         Tuesday<br>
 <br>
 SWIM 0:45<br>
@@ -7111,11 +7167,11 @@ below 50% by the end.<br>
 DAILY TOTAL: 2:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week30Wednesday" aria-expanded="false" aria-controls="week30Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week30Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week30Wednesday">
+    </div>
+    <div class="dayLong week30" id="week30Wednesday">
         Wednesday<br>
 Keep the effort under control today<br>
 -- you had a hard day yesterday and will have another hard session tomorrow.<br>
@@ -7149,11 +7205,11 @@ DAILY TOTAL: 2:55<br>
 WEEK-TO-DATE: 5:05
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week30Thursday" aria-expanded="false" aria-controls="week30Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week30Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week30Thursday">
+    </div>
+    <div class="dayLong week30" id="week30Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -7194,11 +7250,11 @@ DAILY TOTAL: 2:10<br>
 WEEK-TO-DATE: 7:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week30Friday" aria-expanded="false" aria-controls="week30Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week30Friday">
         Friday
-    </button>
-    <div class="collapse" id="week30Friday">
+    </div>
+    <div class="dayLong week30" id="week30Friday">
         Friday<br>
 <br>
 SWIM 0:45<br>
@@ -7232,11 +7288,11 @@ the duration of an Ultra distance race is no big deal (though the effort<br>
 you put in might be!).
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week30Saturday" aria-expanded="false" aria-controls="week30Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week30Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week30Saturday">
+    </div>
+    <div class="dayLong week30" id="week30Saturday">
         Saturday<br>
 <br>
 BIKE 4:00<br>
@@ -7267,11 +7323,11 @@ DAILY TOTAL: 5:20<br>
 WEEK-TO-DATE: 14:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week30Sunday" aria-expanded="false" aria-controls="week30Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week30Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week30Sunday">
+    </div>
+    <div class="dayLong week30" id="week30Sunday">
         Sunday<br>
 <br>
 RUN 2:00<br>
@@ -7288,29 +7344,31 @@ WEEK-TO-DATE: 17:00
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 31
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week31Monday" aria-expanded="false" aria-controls="week31Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 31 
+        <a class="weekToggle" href="#" data-target="week31" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week31" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week31Monday">
         Monday
-    </button>
-    <div class="collapse" id="week31Monday">
+    </div>
+    <div class="dayLong week31" id="week31Monday">
         Monday<br>
 Enjoy your day off doing something<br>
 you don't normally do with the extra time, something totally unrelated<br>
 to triathlon. 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week31Tuesday" aria-expanded="false" aria-controls="week31Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week31Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week31Tuesday">
+    </div>
+    <div class="dayLong week31" id="week31Tuesday">
         Tuesday<br>
 If you have a choice, do the workout<br>
 of the sport in which you need the most help first. If you're a strong<br>
@@ -7357,11 +7415,11 @@ below 50% by the end.<br>
 DAILY TOTAL: 2:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week31Wednesday" aria-expanded="false" aria-controls="week31Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week31Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week31Wednesday">
+    </div>
+    <div class="dayLong week31" id="week31Wednesday">
         Wednesday<br>
 <br>
 RUN 1:25<br>
@@ -7404,11 +7462,11 @@ DAILY TOTAL: 3:40<br>
 WEEK-TO-DATE: 5:55
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week31Thursday" aria-expanded="false" aria-controls="week31Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week31Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week31Thursday">
+    </div>
+    <div class="dayLong week31" id="week31Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -7450,11 +7508,11 @@ DAILY TOTAL: 2:05<br>
 WEEK-TO-DATE: 8:00
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week31Friday" aria-expanded="false" aria-controls="week31Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week31Friday">
         Friday
-    </button>
-    <div class="collapse" id="week31Friday">
+    </div>
+    <div class="dayLong week31" id="week31Friday">
         Friday<br>
 More IM work today.<br>
 SWIM 0:45<br>
@@ -7480,11 +7538,11 @@ like this one will do wonders for your confidence and your fitness going<br>
 into your Ironman race.
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week31Saturday" aria-expanded="false" aria-controls="week31Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week31Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week31Saturday">
+    </div>
+    <div class="dayLong week31" id="week31Saturday">
         Saturday<br>
 <br>
 BIKE 5:15<br>
@@ -7515,11 +7573,11 @@ DAILY TOTAL: 6:30<br>
 WEEK-TO-DATE: 15:15
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week31Sunday" aria-expanded="false" aria-controls="week31Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week31Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week31Sunday">
+    </div>
+    <div class="dayLong week31" id="week31Sunday">
         Sunday<br>
 <br>
 RUN 1:45<br>
@@ -7540,27 +7598,29 @@ WEEK-TO-DATE: 19:00
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 32
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week32Monday" aria-expanded="false" aria-controls="week32Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 32 
+        <a class="weekToggle" href="#" data-target="week32" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week32" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week32Monday">
         Monday
-    </button>
-    <div class="collapse" id="week32Monday">
+    </div>
+    <div class="dayLong week32" id="week32Monday">
         Monday<br>
 Have a great day off! 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week32Tuesday" aria-expanded="false" aria-controls="week32Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week32Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week32Tuesday">
+    </div>
+    <div class="dayLong week32" id="week32Tuesday">
         Tuesday<br>
 We're easing back on the intensity,<br>
 back into the 84-92% range for rides. This will put the finishing touches<br>
@@ -7597,11 +7657,11 @@ chain ring and pedal at 100+rpm. Allow your HR to fall under 60%.<br>
 DAILY TOTAL: 2:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week32Wednesday" aria-expanded="false" aria-controls="week32Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week32Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week32Wednesday">
+    </div>
+    <div class="dayLong week32" id="week32Wednesday">
         Wednesday<br>
 <br>
 RUN 1:15<br>
@@ -7631,11 +7691,11 @@ DAILY TOTAL: 3:15<br>
 WEEK-TO-DATE: 5:25
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week32Thursday" aria-expanded="false" aria-controls="week32Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week32Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week32Thursday">
+    </div>
+    <div class="dayLong week32" id="week32Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -7673,11 +7733,11 @@ DAILY TOTAL: 2:05<br>
 WEEK-TO-DATE: 7:30
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week32Friday" aria-expanded="false" aria-controls="week32Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week32Friday">
         Friday
-    </button>
-    <div class="collapse" id="week32Friday">
+    </div>
+    <div class="dayLong week32" id="week32Friday">
         Friday<br>
 More IM work today.<br>
 SWIM 0:45<br>
@@ -7702,11 +7762,11 @@ one! Take the extra time away from training and have some good fun and<br>
 R&R!!
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week32Saturday" aria-expanded="false" aria-controls="week32Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week32Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week32Saturday">
+    </div>
+    <div class="dayLong week32" id="week32Saturday">
         Saturday<br>
 <br>
 BIKE 3:30<br>
@@ -7733,11 +7793,11 @@ DAILY TOTAL: 4:45<br>
 WEEK-TO-DATE: 13:00
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week32Sunday" aria-expanded="false" aria-controls="week32Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week32Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week32Sunday">
+    </div>
+    <div class="dayLong week32" id="week32Sunday">
         Sunday<br>
 <br>
 RUN 1:30<br>
@@ -7755,27 +7815,29 @@ WEEK-TO-DATE: 15:30
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 33
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week33Monday" aria-expanded="false" aria-controls="week33Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 33 
+        <a class="weekToggle" href="#" data-target="week33" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week33" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week33Monday">
         Monday
-    </button>
-    <div class="collapse" id="week33Monday">
+    </div>
+    <div class="dayLong week33" id="week33Monday">
         Monday<br>
 Have a great day off! 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week33Tuesday" aria-expanded="false" aria-controls="week33Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week33Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week33Tuesday">
+    </div>
+    <div class="dayLong week33" id="week33Tuesday">
         Tuesday<br>
 The bike intervals will be done at<br>
 the same intensity, but the repeats will be shorter and there will be more<br>
@@ -7813,11 +7875,11 @@ ring and pedal at 100+rpm. Allow your HR to fall under 60%.<br>
 DAILY TOTAL: 2:00
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week33Wednesday" aria-expanded="false" aria-controls="week33Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week33Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week33Wednesday">
+    </div>
+    <div class="dayLong week33" id="week33Wednesday">
         Wednesday<br>
 <br>
 RUN 1:15<br>
@@ -7855,11 +7917,11 @@ DAILY TOTAL: 2:45<br>
 WEEK-TO-DATE: 4:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week33Thursday" aria-expanded="false" aria-controls="week33Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week33Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week33Thursday">
+    </div>
+    <div class="dayLong week33" id="week33Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -7902,11 +7964,11 @@ DAILY TOTAL: 2:05<br>
 WEEK-TO-DATE: 6:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week33Friday" aria-expanded="false" aria-controls="week33Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week33Friday">
         Friday
-    </button>
-    <div class="collapse" id="week33Friday">
+    </div>
+    <div class="dayLong week33" id="week33Friday">
         Friday<br>
 Last day devoted mostly<br>
 to IM work.<br>
@@ -7933,11 +7995,11 @@ Next week the run will get<br>
 shorter and the ride will stay virtually the same.
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week33Saturday" aria-expanded="false" aria-controls="week33Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week33Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week33Saturday">
+    </div>
+    <div class="dayLong week33" id="week33Saturday">
         Saturday<br>
 <br>
 BIKE 4:25<br>
@@ -7972,11 +8034,11 @@ DAILY TOTAL: 5:25<br>
 WEEK-TO-DATE: 13:00
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week33Sunday" aria-expanded="false" aria-controls="week33Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week33Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week33Sunday">
+    </div>
+    <div class="dayLong week33" id="week33Sunday">
         Sunday<br>
 <br>
 RUN 1:45<br>
@@ -7998,27 +8060,29 @@ WEEK-TO-DATE: 15:30
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 34
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week34Monday" aria-expanded="false" aria-controls="week34Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 34 
+        <a class="weekToggle" href="#" data-target="week34" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week34" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week34Monday">
         Monday
-    </button>
-    <div class="collapse" id="week34Monday">
+    </div>
+    <div class="dayLong week34" id="week34Monday">
         Monday<br>
 Have a great day off! 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week34Tuesday" aria-expanded="false" aria-controls="week34Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week34Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week34Tuesday">
+    </div>
+    <div class="dayLong week34" id="week34Tuesday">
         Tuesday<br>
 The bike intervals will be done at<br>
 the same intensity, but the repeats will be shorter and there will be more<br>
@@ -8057,11 +8121,11 @@ to 50% by the end.<br>
 DAILY TOTAL: 1:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week34Wednesday" aria-expanded="false" aria-controls="week34Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week34Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week34Wednesday">
+    </div>
+    <div class="dayLong week34" id="week34Wednesday">
         Wednesday<br>
 <br>
 RUN 1:15<br>
@@ -8097,11 +8161,11 @@ DAILY TOTAL: 2:55<br>
 WEEK-TO-DATE: 4:40
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week34Thursday" aria-expanded="false" aria-controls="week34Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week34Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week34Thursday">
+    </div>
+    <div class="dayLong week34" id="week34Thursday">
         Thursday<br>
 <br>
 SWIM 1:00<br>
@@ -8142,11 +8206,11 @@ DAILY TOTAL: 2:05<br>
 WEEK-TO-DATE: 6:45
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week34Friday" aria-expanded="false" aria-controls="week34Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week34Friday">
         Friday
-    </button>
-    <div class="collapse" id="week34Friday">
+    </div>
+    <div class="dayLong week34" id="week34Friday">
         Friday<br>
 Your body should recover<br>
 nicely for the weekend with only a swim workout for the day.<br>
@@ -8168,19 +8232,19 @@ bangs up the legs like a long run, so we're keeping your Ultra endurace<br>
 going with a near race-duration ride on
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week34Saturday" aria-expanded="false" aria-controls="week34Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week34Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week34Saturday">
+    </div>
+    <div class="dayLong week34" id="week34Saturday">
         
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week34Sunday" aria-expanded="false" aria-controls="week34Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week34Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week34Sunday">
+    </div>
+    <div class="dayLong week34" id="week34Sunday">
         Sunday's run duration is on it's way down. Nothing<br>
 bangs up the legs like a long run, so we're keeping your Ultra endurace<br>
 going with a near race-duration ride on Saturday.<br>
@@ -8232,27 +8296,29 @@ WEEK-TO-DATE: 15:30
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 35
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week35Monday" aria-expanded="false" aria-controls="week35Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 35 
+        <a class="weekToggle" href="#" data-target="week35" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week35" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week35Monday">
         Monday
-    </button>
-    <div class="collapse" id="week35Monday">
+    </div>
+    <div class="dayLong week35" id="week35Monday">
         Monday<br>
 Day off. 
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week35Tuesday" aria-expanded="false" aria-controls="week35Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week35Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week35Tuesday">
+    </div>
+    <div class="dayLong week35" id="week35Tuesday">
         Tuesday<br>
 <br>
 SWIM 0:45<br>
@@ -8289,11 +8355,11 @@ below 50% by the end.<br>
 DAILY TOTAL: 2:00
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week35Wednesday" aria-expanded="false" aria-controls="week35Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week35Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week35Wednesday">
+    </div>
+    <div class="dayLong week35" id="week35Wednesday">
         Wednesday<br>
 <br>
 RUN 0:50<br>
@@ -8321,11 +8387,11 @@ DAILY TOTAL: 1:50<br>
 WEEK-TO-DATE: 3:50
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week35Thursday" aria-expanded="false" aria-controls="week35Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week35Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week35Thursday">
+    </div>
+    <div class="dayLong week35" id="week35Thursday">
         Thursday<br>
 <br>
 SWIM 0:45<br>
@@ -8364,11 +8430,11 @@ DAILY TOTAL: 1:45<br>
 WEEK-TO-DATE: 5:35
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week35Friday" aria-expanded="false" aria-controls="week35Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week35Friday">
         Friday
-    </button>
-    <div class="collapse" id="week35Friday">
+    </div>
+    <div class="dayLong week35" id="week35Friday">
         Friday<br>
 <br>
 SWIM 0:30<br>
@@ -8393,11 +8459,11 @@ a key section of the course -- a particularly challenging section or a<br>
 part with a lot of turns that needs to be mapped out before race day.
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week35Saturday" aria-expanded="false" aria-controls="week35Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week35Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week35Saturday">
+    </div>
+    <div class="dayLong week35" id="week35Saturday">
         Saturday<br>
 <br>
 BIKE 2:30<br>
@@ -8422,11 +8488,11 @@ DAILY TOTAL: 3:05<br>
 WEEK-TO-DATE: 9:10
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week35Sunday" aria-expanded="false" aria-controls="week35Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week35Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week35Sunday">
+    </div>
+    <div class="dayLong week35" id="week35Sunday">
         Sunday<br>
 <br>
 RUN 1:00<br>
@@ -8447,18 +8513,20 @@ WEEK-TO-DATE: 10:55
     </div>
 </div>
 
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        Week 36
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week36Monday" aria-expanded="false" aria-controls="week36Monday">
+<div class="week">
+    <div class="weekHeader">
+        Week 36 
+        <a class="weekToggle" href="#" data-target="week36" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="week36" data-display="false">Hide All</a>
+    </div>
+    <div class="weekDays">
+        <div class="day">
+    <div class="dayShort noselect" data-target="week36Monday">
         Monday
-    </button>
-    <div class="collapse" id="week36Monday">
+    </div>
+    <div class="dayLong week36" id="week36Monday">
         Monday<br>
 One short workout today to<br>
 keep the legs sharp. Check over all your equipment so that everything is<br>
@@ -8484,11 +8552,11 @@ it in the final couple minutes.<br>
 DAILY TOTAL: 0:30
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week36Tuesday" aria-expanded="false" aria-controls="week36Tuesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week36Tuesday">
         Tuesday
-    </button>
-    <div class="collapse" id="week36Tuesday">
+    </div>
+    <div class="dayLong week36" id="week36Tuesday">
         Tuesday<br>
 <br>
 SWIM 0:45<br>
@@ -8523,11 +8591,11 @@ DAILY TOTAL: 1:35<br>
 WEEK-TO-DATE: 2:05
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week36Wednesday" aria-expanded="false" aria-controls="week36Wednesday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week36Wednesday">
         Wednesday
-    </button>
-    <div class="collapse" id="week36Wednesday">
+    </div>
+    <div class="dayLong week36" id="week36Wednesday">
         Wednesday<br>
 <br>
 RUN 0:50<br>
@@ -8555,11 +8623,11 @@ DAILY TOTAL: 1:20<br>
 WEEK-TO-DATE: 3:25
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week36Thursday" aria-expanded="false" aria-controls="week36Thursday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week36Thursday">
         Thursday
-    </button>
-    <div class="collapse" id="week36Thursday">
+    </div>
+    <div class="dayLong week36" id="week36Thursday">
         Thursday<br>
 Just a couple of "fast"<br>
 repeats to keep you sharp, but nothing that will cause lactate to build<br>
@@ -8583,27 +8651,27 @@ DAILY TOTAL: 0:35<br>
 WEEK-TO-DATE: 4:00
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week36Friday" aria-expanded="false" aria-controls="week36Friday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week36Friday">
         Friday
-    </button>
-    <div class="collapse" id="week36Friday">
+    </div>
+    <div class="dayLong week36" id="week36Friday">
         
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week36Saturday" aria-expanded="false" aria-controls="week36Saturday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week36Saturday">
         Saturday
-    </button>
-    <div class="collapse" id="week36Saturday">
+    </div>
+    <div class="dayLong week36" id="week36Saturday">
         
     </div>
 </div>
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#week36Sunday" aria-expanded="false" aria-controls="week36Sunday">
+<div class="day">
+    <div class="dayShort noselect" data-target="week36Sunday">
         Sunday
-    </button>
-    <div class="collapse" id="week36Sunday">
+    </div>
+    <div class="dayLong week36" id="week36Sunday">
         Sunday race, you can<br>
 easily adjust things (by eliminating Saturday) if your race day is Saturday<br>
 instead of Sunday.<br>
@@ -8747,9 +8815,8 @@ Soak it all in, the adulations is as much for you as anyone else there!<br>
     </div>
 </div>
 
+    </div>
 </div>
 
-</div>
-</body>
-
+    </body>
 </html>

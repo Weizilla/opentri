@@ -1,8 +1,10 @@
-<div class="row">
-    <div class="col-lg-1">
-        ${weekName}
+<div class="week">
+    <div class="weekHeader">
+        ${weekName} 
+        <a class="weekToggle" href="#" data-target="${weekId}" data-display="true">Show All</a>
+        <a class="weekToggle" href="#" data-target="${weekId}" data-display="false">Hide All</a>
     </div>
-</div>
-<div class="row">
-    ${days}
+    <div class="weekDays">
+        ${days}
+    </div>
 </div>

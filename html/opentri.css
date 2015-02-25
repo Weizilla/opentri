@@ -1,0 +1,45 @@
+div {
+    padding: 2px;
+}
+
+.dayShort {
+    margin: 5px 5px 0px 5px;
+}
+
+.dayLong {
+    margin: 0px 5px 5px 5px;
+}
+
+.week {
+    width: 99%;
+    margin: 5px;
+}
+
+.weekDays {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.week, .dayLong, .dayShort {
+    border:1px solid black;
+}
+
+.weekToggle {
+    display: inline-block;
+    margin: 2px;
+}
+
+.day {
+    display: table-cell;
+    vertical-align:top;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

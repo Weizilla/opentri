@@ -1,8 +1,8 @@
-<div class="col-lg-1">
-    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#${dayName}" aria-expanded="false" aria-controls="${dayName}">
+<div class="day">
+    <div class="dayShort noselect" data-target="${dayName}">
         ${dayShort}
-    </button>
-    <div class="collapse" id="${dayName}">
+    </div>
+    <div class="dayLong ${weekId}" id="${dayName}">
         ${dayLong}
     </div>
 </div>

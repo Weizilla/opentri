@@ -24,14 +24,16 @@ class Generator(object):
             weeks = ""
             for week in self.opentri.weeks:
                 days = ""
+                weekId = "week{w}".format(w=week.num)
                 for day in week.days.values():
                     dayName = "week{w}{d}".format(w=week.num, d=day.day)
                     dayShort = day.day
                     dayLong = day.workout.replace("\n", "<br>\n")
-                    days += dayTemplate.substitute(dayName=dayName, dayShort=dayShort, dayLong=dayLong)
+                    days += dayTemplate.substitute(
+                        dayName=dayName, dayShort=dayShort, dayLong=dayLong, weekId=weekId)
                     print "Wrote week {w} day {d}".format(w=week.num, d=day.day) 
                 weekName = "Week {w}".format(w=week.num)
-                weeks += weekTemplate.substitute(weekName=weekName, days=days)
+                weeks += weekTemplate.substitute(weekName=weekName, days=days, weekId=weekId)
             
             text = indexTemplate.substitute(weeks=weeks)
             output.write(text)
