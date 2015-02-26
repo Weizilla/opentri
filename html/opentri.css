@@ -4,19 +4,26 @@
     box-sizing: border-box;
 }
 
+.week {
+    margin: 5px;
+    padding: 5px;
+    background-color: #F0F0F0;
+}
+
 .dayShort {
     margin: 5px 5px 0px 5px;
     padding: 5px;
+    background-color: #E5F3FF;
+}
+
+.dayShortSelected {
+    background-color: #6BBAFF;
 }
 
 .dayLong {
     margin: 0px 5px 5px 5px;
     padding: 5px;
-}
-
-.week {
-    margin: 5px;
-    padding: 5px;
+    background-color: white;
 }
 
 .week, .dayLong, .dayShort {

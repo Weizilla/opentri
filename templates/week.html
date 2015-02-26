@@ -1,8 +1,10 @@
-<div class="week pure-g">
+<div class="week pure-g" id="${weekId}">
     <div class="weekHeader pure-u-1">
         ${weekName} 
-        <a class="weekToggle" href="#" data-target="${weekId}" data-display="true">Show All</a>
-        <a class="weekToggle" href="#" data-target="${weekId}" data-display="false">Hide All</a>
+        <a class="weekToggle" href="#" data-display="true">Show</a> | 
+        <a class="weekToggle" href="#" data-display="false">Hide</a> Week | 
+        <a class="daysToggle" href="#" data-display="true">Show</a> | 
+        <a class="daysToggle" href="#" data-display="false">Hide</a> Days
     </div>
     <div class="weekDays pure-u-1">
         ${days}

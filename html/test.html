@@ -1,103 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-        <link rel="stylesheet" href="opentri.css">
-        <script src="jquery-1.11.2.min.js"></script>
-        <script src="opentri.js"></script>
-    </head>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+<link rel="stylesheet" href="opentri.css">
+<script src="jquery-1.11.2.min.js"></script>
+<script src="opentri.js"></script>
+</head>
 
-    <title>TEST</title>
-    <body>
-        <h1>WORKOUTS</h1>
-        <div class="week pure-g">
-            <div class="weekHeader pure-u-1">
-                Week 1
-                <a class="weekToggle" href="#" data-target="week1" data-display="false">Hide All</a>
-                <a class="weekToggle" href="#" data-target="week1" data-display="true">Show All</a>
-            </div>
-            <div class="day pure-u-1 pure-u-lg-3-24">
-                <div class="dayShort noselect" data-target="week1Mon">
-                    Monday 1<br> RUN 1:00 <br> SWIM 1:00
-                </div> 
-                <div class="dayLong week1" id="week1Mon">
-                    Monday 
-                    We begin easily enough with one short swim. Nothing too crazy here, just allow yourself some time to get used to the water again and be patient with speed.
-                    SWIM 0:30
-                    WARM UP:
-                    200 Swim - 2 x 100 Kick -
-                    4 x 50 Choice, w/10 sec rest after each
-                    MAIN SET:
-                    5 x 200 w/:20 rest, done as follows:
-                    (50 right arm only - 50 swim - 50 left arm only - 50 swim)
-                    COOL DOWN:
-                    2 x (50 Kick/50 Swim)
-                </div>
-            </div>
-            <div class="day pure-u-1 pure-u-lg-3-24">
-                <div class="dayShort noselect" data-target="week1Tue">
-                    Tuesday 1<br> SWIM 1:00 <br> RUN 1:00
-                </div>
-                <div class="dayLong week1" id="week1Tue">
-                    Tuesday 
-                    Because the duration of each workout is relatively short today, it is possible to put them in your day together, back-to-back. However, as these durations increase it will be preferable to split these efforts within your day -- the order isn't very important right now, though we will recommend later that you perform the higher intensity bike effort first.
-                    BIKE 0:50
-                    20:00 easy spin using your small chain ring only.
-                    Keep your HR intensity below 65% throughout, holding your cadence to 95-105 rpm.
-                    20:00 time trial, bringing your HR up to 75%
-                    -- stay in the small chain ring & increase your HR by increasing your cadence.
-                    Maintain that intensity throughout this short effort
-                    Spin easily through the final 10:00, allowing your HR to gradually get below 60%
-                    RUN 0:35
-                    Easy reintroduction to running.
-                    Hold good running form throughout,
-                    and keep your upper body relaxed.
-                </div>
+<title>TEST</title>
+<body>
+<h1>WORKOUTS</h1>
+<div class="week pure-g" id="week1">
+    <div class="weekHeader pure-u-1">
+        Week 1
+        <a class="weekToggle" href="#" data-display="true">Show</a> | 
+        <a class="weekToggle" href="#" data-display="false">Hide</a> Week
+        <a class="daysToggle" href="#" data-display="true">Show</a> | 
+        <a class="daysToggle" href="#" data-display="false">Hide</a> Days
+    </div>
+    <div class="weekDays pure-u-1">
+        <div class="day pure-u-1 pure-u-lg-3-24" id="week1Mon">
+            <div class="dayShort noselect">
+                Monday 1<br> RUN 1:00 <br> SWIM 1:00
+            </div> 
+            <div class="dayLong">
+                Monday 
+                We begin easily enough with one short swim. Nothing too crazy here, just allow yourself some time to get used to the water again and be patient with speed.
+                SWIM 0:30
+                WARM UP:
+                200 Swim - 2 x 100 Kick -
+                4 x 50 Choice, w/10 sec rest after each
+                MAIN SET:
+                5 x 200 w/:20 rest, done as follows:
+                (50 right arm only - 50 swim - 50 left arm only - 50 swim)
+                COOL DOWN:
+                2 x (50 Kick/50 Swim)
             </div>
         </div>
-        <div class="week pure-g">
-            <div class="weekHeader pure-u-1">Week 2</div>
-            <div class="day pure-u-1 pure-u-lg-3-24">
-                <div class="dayShort noselect" data-target="week2Mon">
-                    Monday 2<br> RUN 1:00 <br> SWIM 1:00
-                </div> 
-                <div class="dayLong" id="week2Mon">
-                    Monday 
-                    We begin easily enough with one short swim. Nothing too crazy here, just allow yourself some time to get used to the water again and be patient with speed.
-                    SWIM 0:30
-                    WARM UP:
-                    200 Swim - 2 x 100 Kick -
-                    4 x 50 Choice, w/10 sec rest after each
-                    MAIN SET:
-                    5 x 200 w/:20 rest, done as follows:
-                    (50 right arm only - 50 swim - 50 left arm only - 50 swim)
-                    COOL DOWN:
-                    2 x (50 Kick/50 Swim)
-                </div>
+        <div class="day pure-u-1 pure-u-lg-3-24" id="week1Tue">
+            <div class="dayShort noselect">
+                Tuesday 1<br> SWIM 1:00 <br> RUN 1:00
             </div>
-            <div class="day pure-u-1 pure-u-lg-3-24">
-                <div class="dayShort noselect" data-target="week2Tue">
-                    Tuesday 2<br> SWIM 1:00 <br> RUN 1:00
-                </div>
-                <div class="dayLong" id="week2Tue">
-                    Tuesday 
-                    Because the duration of each workout is relatively short today, it is possible to put them in your day together, back-to-back. However, as these durations increase it will be preferable to split these efforts within your day -- the order isn't very important right now, though we will recommend later that you perform the higher intensity bike effort first.
-                    BIKE 0:50
-                    20:00 easy spin using your small chain ring only.
-                    Keep your HR intensity below 65% throughout, holding your cadence to 95-105 rpm.
-                    20:00 time trial, bringing your HR up to 75%
-                    -- stay in the small chain ring & increase your HR by increasing your cadence.
-                    Maintain that intensity throughout this short effort
-                    Spin easily through the final 10:00, allowing your HR to gradually get below 60%
-                    RUN 0:35
-                    Easy reintroduction to running.
-                    Hold good running form throughout,
-                    and keep your upper body relaxed.
-                </div>
+            <div class="dayLong">
+                Tuesday 
+                Because the duration of each workout is relatively short today, it is possible to put them in your day together, back-to-back. However, as these durations increase it will be preferable to split these efforts within your day -- the order isn't very important right now, though we will recommend later that you perform the higher intensity bike effort first.
+                BIKE 0:50
+                20:00 easy spin using your small chain ring only.
+                Keep your HR intensity below 65% throughout, holding your cadence to 95-105 rpm.
+                20:00 time trial, bringing your HR up to 75%
+                -- stay in the small chain ring & increase your HR by increasing your cadence.
+                Maintain that intensity throughout this short effort
+                Spin easily through the final 10:00, allowing your HR to gradually get below 60%
+                RUN 0:35
+                Easy reintroduction to running.
+                Hold good running form throughout,
+                and keep your upper body relaxed.
             </div>
         </div>
-    </body>
+    </div>
+</div>
+<div class="week pure-g" id="week2">
+    <div class="weekHeader pure-u-1">
+        Week 2
+        <a class="weekToggle" href="#" data-display="false">Hide All</a>
+        <a class="weekToggle" href="#" data-display="true">Show All</a>
+    </div>
+    <div class="weekDays pure-u-1">
+        <div class="day pure-u-1 pure-u-lg-3-24" id="week2Mon">
+            <div class="dayShort noselect">
+                Monday 2<br> RUN 1:00 <br> SWIM 1:00
+            </div> 
+            <div class="dayLong">
+                Monday 
+                We begin easily enough with one short swim. Nothing too crazy here, just allow yourself some time to get used to the water again and be patient with speed.
+                SWIM 0:30
+                WARM UP:
+                200 Swim - 2 x 100 Kick -
+                4 x 50 Choice, w/10 sec rest after each
+                MAIN SET:
+                5 x 200 w/:20 rest, done as follows:
+                (50 right arm only - 50 swim - 50 left arm only - 50 swim)
+                COOL DOWN:
+                2 x (50 Kick/50 Swim)
+            </div>
+        </div>
+        <div class="day pure-u-1 pure-u-lg-3-24" id="week2Tue">
+            <div class="dayShort noselect">
+                Tuesday 2<br> SWIM 1:00 <br> RUN 1:00
+            </div>
+            <div class="dayLong">
+                Tuesday 
+                Because the duration of each workout is relatively short today, it is possible to put them in your day together, back-to-back. However, as these durations increase it will be preferable to split these efforts within your day -- the order isn't very important right now, though we will recommend later that you perform the higher intensity bike effort first.
+                BIKE 0:50
+                20:00 easy spin using your small chain ring only.
+                Keep your HR intensity below 65% throughout, holding your cadence to 95-105 rpm.
+                20:00 time trial, bringing your HR up to 75%
+                -- stay in the small chain ring & increase your HR by increasing your cadence.
+                Maintain that intensity throughout this short effort
+                Spin easily through the final 10:00, allowing your HR to gradually get below 60%
+                RUN 0:35
+                Easy reintroduction to running.
+                Hold good running form throughout,
+                and keep your upper body relaxed.
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 
 </html>
