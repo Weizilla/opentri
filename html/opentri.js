@@ -1,6 +1,10 @@
 $(document).ready(function() {
     $('.dayLong').hide();
 
+    $('.dayLong').click(function() {
+        $(this).toggle();
+    });
+
     $('.dayShort').click(function() {
         var target = $(this).attr("data-target");
         $("#" + target).toggle();   

@@ -1,24 +1,22 @@
-div {
-    padding: 2px;
+.pure-g > div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .dayShort {
     margin: 5px 5px 0px 5px;
+    padding: 5px;
 }
 
 .dayLong {
     margin: 0px 5px 5px 5px;
+    padding: 5px;
 }
 
 .week {
-    width: 99%;
     margin: 5px;
-}
-
-.weekDays {
-    width: 100%;
-    display: table;
-    table-layout: fixed;
+    padding: 5px;
 }
 
 .week, .dayLong, .dayShort {
@@ -26,13 +24,7 @@ div {
 }
 
 .weekToggle {
-    display: inline-block;
     margin: 2px;
-}
-
-.day {
-    display: table-cell;
-    vertical-align:top;
 }
 
 .noselect {
