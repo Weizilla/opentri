@@ -2,6 +2,7 @@
 from string import Template
 from opentri import OpenTri
 import os
+import datetime
 
 def template(filename):
     with open(filename) as file:
@@ -10,6 +11,8 @@ def template(filename):
 dayTemplate = template("templates/day.html")
 weekTemplate = template("templates/week.html")
 indexTemplate = template("templates/index.html")
+
+startDate = datetime.date(2015, 1, 5)
 
 class Generator(object):
     def __init__(self, opentri):
@@ -22,21 +25,37 @@ class Generator(object):
         path = os.path.join(directory, filename)
         with open (path, "w") as output:
             weeks = ""
+            weekGen = self.weekGen()
             for week in self.opentri.weeks:
-                days = ""
-                weekId = "week{w}".format(w=week.num)
+                weekSubs = {}
+                weekSubs["days"] = ""
+
                 for day in week.days.values():
-                    dayName = "week{w}{d}".format(w=week.num, d=day.day)
-                    dayShort = day.day
-                    dayLong = day.workout.replace("\n", "<br>\n")
-                    days += dayTemplate.substitute(
-                        dayName=dayName, dayShort=dayShort, dayLong=dayLong, weekId=weekId)
+                    daySubs = {}
+                    daySubs["dayName"] = "week{w}{d}".format(w=week.num, d=day.day)
+                    daySubs["dayShort"] = day.day
+                    daySubs["dayLong"] = day.workout.replace("\n", "<br>\n")
+                    weekSubs["days"] += dayTemplate.substitute(daySubs)
                     print "Wrote week {w} day {d}".format(w=week.num, d=day.day) 
-                weekName = "Week {w}".format(w=week.num)
-                weeks += weekTemplate.substitute(weekName=weekName, days=days, weekId=weekId)
+
+                weekSubs["weekId"] = "week{w}".format(w=week.num)
+                weekSubs["weekName"] = "Week {w}".format(w=week.num)
+                weekStart = weekGen.next()
+                weekSubs["weekStart"] = "{d.year}-{d.month}-{d.day}".format(d=weekStart)
+                weekSubs["weekDate"] = "{d:%b} {d.day}".format(d=weekStart)
+                weeks += weekTemplate.substitute(weekSubs)
             
             text = indexTemplate.substitute(weeks=weeks)
             output.write(text)
+
+    def weekGen(self):
+        weekDelta = datetime.timedelta(weeks=1)
+        def gen():
+            currWeek = startDate
+            while True:
+                yield currWeek
+                currWeek += weekDelta
+        return gen()
 
 if __name__ == "__main__":
     generator = Generator(OpenTri())
