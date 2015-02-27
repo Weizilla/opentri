@@ -8,9 +8,9 @@ from collections import OrderedDict
 import mechanize
 import os
 
-days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", None]
-
-clean = ["<FONT FACE=\"Arial\">", "<FONT SIZE=-1>", "</FONT>", "<HR>", "</BODY>", "</HTML>"]
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+removes = ["font", "hr", "div", "br"]
+replaces = [("\n", " ")]
 
 def pairwise(iterable):
     "s -> (s0,s1), (s1,s2), (s2, s3), ..."
@@ -19,44 +19,56 @@ def pairwise(iterable):
     return izip(a, b)
 
 class Week(object):
-    def __init__(self, source, num=None, html=False):
+    def __init__(self, source, num=None):
         self.num = num
         self.read(source)
-        self.clean(html)
+        self.clean()
         self.parse()
 
     def read(self, source):
         if source.startswith("http"):
-            self.html = mechanize.Browser().open(source).get_data()
+            html = mechanize.Browser().open(source).get_data()
         elif os.path.isfile(source):
             with open(source) as htmlFile:
-                self.html = htmlFile.read() 
+                html = htmlFile.read()
         else:
             raise ValueError("Invalid source {}".format(source))
+        self.html = BeautifulSoup(html.decode("utf-8").replace("\n", " "))
 
-    def clean(self, html):
-        if html:
-            for cleanText in clean:
-                self.text = self.html.replace(cleanText, "")
-        else:
-            self.text = BeautifulSoup(self.html).get_text().encode("utf-8")
-        self.text = self.text.replace("\n\n", "\n")
+    def clean(self):
+        for remove in removes:
+            [r.unwrap() for r in self.html(remove)]
 
     def parse(self):
         self.days = OrderedDict()
-        for startDay, endDay in pairwise(days):
-            start = self.text.index(startDay)
-            if endDay:
-                end = self.text.index(endDay)
-                workout = self.text[start:end]
-            else:
-                workout = self.text[start:]
-            self.days[startDay] = Day(startDay, workout.strip())
+        dayOfWeek = None
+        for tag in self.html.html.body:
+            n = tag.name
+            if n == "b" and any(d in tag.string for d in days if tag.string):
+                dayOfWeek = tag.string
+                self.days[dayOfWeek] = Day(dayOfWeek)
+            
+            if dayOfWeek:
+                self.days[dayOfWeek].workouts.append(tag)
+
+                if n == "dl":
+                    for t in tag.find_all("dt"):
+                        self.days[dayOfWeek].headers.append(t.get_text().strip())
+
+            if n == "b" and tag.string and "DAILY TOTAL" in tag.string:
+                dayOfWeek = None
 
 class Day(object):
-    def __init__(self, day, workout):
+    def __init__(self, day):
         self.day = day
-        self.workout = workout
+        self.headers = []
+        self.workouts = []
+
+    def header(self):
+        return "".join(unicode(s) for s in self.headers)
+
+    def workout(self):
+        return "".join(unicode(s) for s in self.workouts)
 
 def parseArgs():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -68,5 +80,8 @@ if __name__ == "__main__":
     week = Week(args.source)
     for day in week.days.values():
         print day.day
-        print day.workout
+        print "--------------"
+        print day.header()
+        print "--------------"
+        print day.workout()
         print "====================================="

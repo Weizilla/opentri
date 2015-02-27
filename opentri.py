@@ -25,9 +25,9 @@ typeSort = {
 class OpenTri(object):
     def __init__(self):
         self.br = mechanize.Browser()
-        self.getLinks()
+        self.createWeeks()
 
-    def getLinks(self):
+    def createWeeks(self):
         self.links = []
         data = self.open(index)
         soup = BeautifulSoup(data)

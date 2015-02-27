@@ -23,7 +23,7 @@ class Generator(object):
             os.makedirs(directory)
 
         path = os.path.join(directory, filename)
-        with open (path, "w") as output:
+        with open(path, "w") as output:
             weeks = ""
             weekGen = self.weekGen()
             for week in self.opentri.weeks:
@@ -32,9 +32,10 @@ class Generator(object):
 
                 for day in week.days.values():
                     daySubs = {}
-                    daySubs["dayName"] = "week{w}{d}".format(w=week.num, d=day.day)
-                    daySubs["dayShort"] = day.day
-                    daySubs["dayLong"] = day.workout.replace("\n", "<br>\n")
+                    daySubs["dayId"] = "week{w}{d}".format(w=week.num, d=day.day)
+                    daySubs["dayName"] = day.day
+                    daySubs["dayHeader"] = "<br/>".join(day.headers)
+                    daySubs["dayLong"] = day.workout()
                     weekSubs["days"] += dayTemplate.substitute(daySubs)
                     print "Wrote week {w} day {d}".format(w=week.num, d=day.day) 
 
@@ -46,7 +47,7 @@ class Generator(object):
                 weeks += weekTemplate.substitute(weekSubs)
             
             text = indexTemplate.substitute(weeks=weeks)
-            output.write(text)
+            output.write(text.encode('utf8'))
 
     def weekGen(self):
         weekDelta = datetime.timedelta(weeks=1)

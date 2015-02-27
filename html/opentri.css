@@ -10,6 +10,18 @@
     background-color: #F0F0F0;
 }
 
+.weekName, .dayName {
+    font-weight: bold;
+}
+
+.weekName {
+    color: #404040;
+}
+
+.dayName {
+    color: #505050;
+}
+
 .dayShort {
     margin: 5px 5px 0px 5px;
     padding: 5px;
