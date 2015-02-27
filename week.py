@@ -8,15 +8,10 @@ from collections import OrderedDict
 import mechanize
 import os
 
-days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+daysOfWeek = {d : i for i, d in enumerate(dayNames)}
 removes = ["font", "hr", "div", "br"]
 replaces = [("\n", " ")]
-
-def pairwise(iterable):
-    "s -> (s0,s1), (s1,s2), (s2, s3), ..."
-    a, b = tee(iterable)
-    next(b, None)
-    return izip(a, b)
 
 class Week(object):
     def __init__(self, source, num=None):
@@ -24,6 +19,8 @@ class Week(object):
         self.read(source)
         self.clean()
         self.parse()
+        self.html = None
+        del self.html
 
     def read(self, source):
         if source.startswith("http"):
@@ -40,35 +37,40 @@ class Week(object):
             [r.unwrap() for r in self.html(remove)]
 
     def parse(self):
-        self.days = OrderedDict()
-        dayOfWeek = None
+        days = []
+        currDay = None
         for tag in self.html.html.body:
             n = tag.name
-            if n == "b" and any(d in tag.string for d in days if tag.string):
-                dayOfWeek = tag.string
-                self.days[dayOfWeek] = Day(dayOfWeek)
+            if n == "b":
+                dayOfWeek = self.getDayOfWeek(tag) 
+                if dayOfWeek: 
+                    currDay = Day(dayOfWeek[0])
+                    days.append(currDay)
             
-            if dayOfWeek:
-                self.days[dayOfWeek].workouts.append(tag)
+            if currDay:
+                text = unicode(tag).strip()
+                if text:
+                    currDay.workouts.append(text)
 
                 if n == "dl":
                     for t in tag.find_all("dt"):
-                        self.days[dayOfWeek].headers.append(t.get_text().strip())
+                        currDay.headers.append(t.get_text().strip())
 
             if n == "b" and tag.string and "DAILY TOTAL" in tag.string:
-                dayOfWeek = None
+                currDay = None
+        self.days = sorted(days, key=lambda x: x.dayOfWeek)
+
+    def getDayOfWeek(self, tag):
+        if tag.string:
+            return filter(lambda d: d in tag.string, dayNames)
+        return None
 
 class Day(object):
     def __init__(self, day):
         self.day = day
+        self.dayOfWeek = daysOfWeek[day]
         self.headers = []
         self.workouts = []
-
-    def header(self):
-        return "".join(unicode(s) for s in self.headers)
-
-    def workout(self):
-        return "".join(unicode(s) for s in self.workouts)
 
 def parseArgs():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -78,10 +80,10 @@ def parseArgs():
 if __name__ == "__main__":
     args = parseArgs()
     week = Week(args.source)
-    for day in week.days.values():
+    for day in week.days:
         print day.day
         print "--------------"
-        print day.header()
+        print day.headers
         print "--------------"
-        print day.workout()
+        print day.workouts
         print "====================================="

@@ -30,14 +30,13 @@ class Generator(object):
                 weekSubs = {}
                 weekSubs["days"] = ""
 
-                for day in week.days.values():
+                for day in sorted(week.days, key=lambda d: d.dayOfWeek):
                     daySubs = {}
                     daySubs["dayId"] = "week{w}{d}".format(w=week.num, d=day.day)
                     daySubs["dayName"] = day.day
                     daySubs["dayHeader"] = "<br/>".join(day.headers)
-                    daySubs["dayLong"] = day.workout()
+                    daySubs["dayLong"] = "\n".join(day.workouts)
                     weekSubs["days"] += dayTemplate.substitute(daySubs)
-                    print "Wrote week {w} day {d}".format(w=week.num, d=day.day) 
 
                 weekSubs["weekId"] = "week{w}".format(w=week.num)
                 weekSubs["weekName"] = "Week {w}".format(w=week.num)
@@ -48,6 +47,7 @@ class Generator(object):
             
             text = indexTemplate.substitute(weeks=weeks)
             output.write(text.encode('utf8'))
+            print "Wrote {p}".format(p=path)
 
     def weekGen(self):
         weekDelta = datetime.timedelta(weeks=1)

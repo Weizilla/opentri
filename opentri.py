@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 from operator import attrgetter, methodcaller
 import os
 from week import Week
+from multiprocessing import Pool
 
 index = "http://opentri-training.com/free/ultra/"
 
@@ -21,6 +22,9 @@ typeSort = {
     "competitive" : 2,
     "taper" : 3
 }
+
+def createWeek(link):
+    return Week(link.url, link.num)
 
 class OpenTri(object):
     def __init__(self):
@@ -62,13 +66,8 @@ class OpenTri(object):
             l.num = i + 1
         
     def parseWeeks(self):
-        self.weeks = []
-        for link in self.links: 
-            try:
-                self.weeks.append(Week(link.url, link.num))
-                print "Parsed week {}".format(link.num)
-            except:
-                print "Error parsing {}".format(link)
+        pool = Pool(8)
+        self.weeks = pool.map(createWeek, self.links)
 
     def save(self, directory):
         if not os.path.isdir(directory):
