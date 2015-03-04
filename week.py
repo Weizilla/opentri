@@ -39,9 +39,14 @@ class Week(object):
 
     def parse(self):
         days = []
+        self.headers = []
         currDay = None
         for tag in self.html.html.body:
             n = tag.name
+            
+            if n == "p" and not currDay:
+                self.headers.append(unicode(tag.get_text()).strip())
+
             if n == "b":
                 dayOfWeek = self.getDayOfWeek(tag) 
                 if dayOfWeek: 
@@ -81,6 +86,8 @@ def parseArgs():
 if __name__ == "__main__":
     args = parseArgs()
     week = Week(args.source)
+    print week.headers
+    print "============================="
     for day in week.days:
         print day.day
         print "--------------"
