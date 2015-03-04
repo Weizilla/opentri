@@ -4,6 +4,7 @@ import argparse
 from bs4 import BeautifulSoup
 import mechanize
 import os
+import re
 from local import LocalSource
 
 dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -17,7 +18,8 @@ class Week(object):
         self.url = source.url
         html = self.read()
         self.clean(html)
-        self.parse(html)
+        self.headers = self.parseHeader(html)
+        self.days = sorted(self.parseDays(html), key=lambda x: x.num)
 
     def read(self):
         if self.url.startswith("http"):
@@ -34,38 +36,39 @@ class Week(object):
             [r.unwrap() for r in html(remove)]
         return html
 
-    def parse(self, html):
+    def parseHeader(self, html):
+        headers = []
+
+        return headers
+
+    def parseDays(self, html):
         days = []
-        self.headers = []
-        currDay = None
-        for tag in html.html.body:
-            n = tag.name
 
-            if n != "h3" and not days and not self.getDaysOfWeek(unicode(tag)):
-                self.headers.append(unicode(tag).strip())
+        tags = (day for tag in html("b") for day in self.getDaysOfWeek(tag))
+        dayAnchors = {dayTag.name : dayTag for dayTag in tags}
+        for day in dayAnchors.values():
+            day.tag.string.replace_with(day.name)
 
-            if n == "b":
-                daysOfWeek = self.getDaysOfWeek(tag.get_text())
-                if daysOfWeek:
-                    days.extend(daysOfWeek)
-                    currDay = daysOfWeek[-1]
+        text = unicode(html)
 
-            if currDay:
-                text = unicode(tag).strip()
-                if text:
-                    currDay.workouts.append(text)
+        regex = "(.*)".join("<b>" + d + "</b>" for d in dayNames) + "(.*)</body>"
+        match = re.search(regex, text)
+        if match:
+            print "\n".join(match.groups())
 
-                if n == "dl":
-                    for t in tag.find_all("dt"):
-                        currDay.headers.append(t.get_text().strip())
+        return days
 
-            if n == "b" and tag.string and "DAILY TOTAL" in tag.string:
-                currDay = None
+    def getDaysOfWeek(self, tag):
+        text = tag.get_text()
+        return [DayTag(d, tag) for d in dayNames if d in text]
 
-        self.days = sorted(days, key=lambda x: x.num)
+class DayTag(object):
+    def __init__(self, name, tag):
+        self.name = name
+        self.tag = tag
 
-    def getDaysOfWeek(self, text):
-        return [Day(d) for d in dayNames if d in text]
+    def __repr__(self):
+        return "DayTag({n},{t})".format(n=self.name, t=self.tag)
 
 class Day(object):
     def __init__(self, name):
@@ -89,12 +92,12 @@ if __name__ == "__main__":
     args = parseArgs()
     source = LocalSource(args.source).weeks[0]
     week = Week(source)
-    print week.headers
-    print "============================="
-    for day in week.days:
-        print day.num, day.name
-        print "--------------"
-        print day.headers
-        print "--------------"
-        print day.workouts
-        print "====================================="
+    # print week.headers
+    # print "============================="
+    # for day in week.days:
+    #     print day.num, day.name
+    #     print "--------------"
+    #     print day.headers
+    #     print "--------------"
+    #     print day.workouts
+    #     print "====================================="
