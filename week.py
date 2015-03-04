@@ -16,6 +16,7 @@ replaces = [("\n", " ")]
 class Week(object):
     def __init__(self, source, num=None):
         self.num = num
+        self.source = source
         self.read(source)
         self.clean()
         self.parse()

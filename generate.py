@@ -38,11 +38,12 @@ class Generator(object):
                     daySubs["dayLong"] = "\n".join(day.workouts)
                     weekSubs["days"] += dayTemplate.substitute(daySubs)
 
+                weekStart = weekGen.next()
                 weekSubs["weekId"] = "week{w}".format(w=week.num)
                 weekSubs["weekName"] = "Week {w}".format(w=week.num)
-                weekStart = weekGen.next()
                 weekSubs["weekStart"] = "{d.year}-{d.month}-{d.day}".format(d=weekStart)
                 weekSubs["weekDate"] = "{d:%b} {d.day}".format(d=weekStart)
+                weekSubs["weekSource"] = week.source
                 weeks += weekTemplate.substitute(weekSubs)
             
             text = indexTemplate.substitute(weeks=weeks)
