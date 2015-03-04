@@ -1,58 +1,55 @@
 """ Parses a week page into individual days"""
 
 import argparse
-import re
 from bs4 import BeautifulSoup
-from itertools import tee, izip
-from collections import OrderedDict
 import mechanize
 import os
+from local import LocalSource
 
 dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-daysOfWeek = {d : i for i, d in enumerate(dayNames)}
-removes = ["font", "hr", "div", "br"]
+dayNums = {day : num for num, day in enumerate(dayNames)}
+removes = ["font", "hr", "div", "br", "center"]
 replaces = [("\n", " ")]
 
 class Week(object):
-    def __init__(self, source, num=None):
-        self.num = num
-        self.source = source
-        self.read(source)
-        self.clean()
-        self.parse()
-        self.html = None
-        del self.html
+    def __init__(self, source):
+        self.num = source.num
+        self.url = source.url
+        html = self.read()
+        self.clean(html)
+        self.parse(html)
 
-    def read(self, source):
-        if source.startswith("http"):
-            html = mechanize.Browser().open(source).get_data()
-        elif os.path.isfile(source):
-            with open(source) as htmlFile:
+    def read(self):
+        if self.url.startswith("http"):
+            html = mechanize.Browser().open(self.url).get_data()
+        elif os.path.isfile(self.url):
+            with open(self.url) as htmlFile:
                 html = htmlFile.read()
         else:
-            raise ValueError("Invalid source {}".format(source))
-        self.html = BeautifulSoup(html.decode("utf-8").replace("\n", " "))
+            raise ValueError("Invalid source {}".format(self.url))
+        return BeautifulSoup(html.decode("utf-8").replace("\n", " "))
 
-    def clean(self):
+    def clean(self, html):
         for remove in removes:
-            [r.unwrap() for r in self.html(remove)]
+            [r.unwrap() for r in html(remove)]
+        return html
 
-    def parse(self):
+    def parse(self, html):
         days = []
         self.headers = []
         currDay = None
-        for tag in self.html.html.body:
+        for tag in html.html.body:
             n = tag.name
-            
-            if n == "p" and not currDay:
-                self.headers.append(unicode(tag.get_text()).strip())
+
+            if n != "h3" and not days and not self.getDayOfWeek(tag):
+                self.headers.append(unicode(tag).strip())
 
             if n == "b":
-                dayOfWeek = self.getDayOfWeek(tag) 
-                if dayOfWeek: 
-                    currDay = Day(dayOfWeek[0])
+                dayOfWeek = self.getDayOfWeek(tag)
+                if dayOfWeek:
+                    currDay = Day(dayOfWeek[0]) # handle multiple days in single tag
                     days.append(currDay)
-            
+
             if currDay:
                 text = unicode(tag).strip()
                 if text:
@@ -64,7 +61,8 @@ class Week(object):
 
             if n == "b" and tag.string and "DAILY TOTAL" in tag.string:
                 currDay = None
-        self.days = sorted(days, key=lambda x: x.dayOfWeek)
+
+        self.days = sorted(days, key=lambda x: x.num)
 
     def getDayOfWeek(self, tag):
         if tag.string:
@@ -72,9 +70,9 @@ class Week(object):
         return None
 
 class Day(object):
-    def __init__(self, day):
-        self.day = day
-        self.dayOfWeek = daysOfWeek[day]
+    def __init__(self, name):
+        self.name = name
+        self.num = dayNums[name]
         self.headers = []
         self.workouts = []
 
@@ -85,11 +83,12 @@ def parseArgs():
 
 if __name__ == "__main__":
     args = parseArgs()
-    week = Week(args.source)
+    source = LocalSource(args.source).weeks[0]
+    week = Week(source)
     print week.headers
     print "============================="
     for day in week.days:
-        print day.day
+        print day.num, day.name
         print "--------------"
         print day.headers
         print "--------------"
