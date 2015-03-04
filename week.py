@@ -41,14 +41,14 @@ class Week(object):
         for tag in html.html.body:
             n = tag.name
 
-            if n != "h3" and not days and not self.getDayOfWeek(tag):
+            if n != "h3" and not days and not self.getDaysOfWeek(unicode(tag)):
                 self.headers.append(unicode(tag).strip())
 
             if n == "b":
-                dayOfWeek = self.getDayOfWeek(tag)
-                if dayOfWeek:
-                    currDay = Day(dayOfWeek[0]) # handle multiple days in single tag
-                    days.append(currDay)
+                daysOfWeek = self.getDaysOfWeek(tag.get_text())
+                if daysOfWeek:
+                    days.extend(daysOfWeek)
+                    currDay = daysOfWeek[-1]
 
             if currDay:
                 text = unicode(tag).strip()
@@ -64,10 +64,8 @@ class Week(object):
 
         self.days = sorted(days, key=lambda x: x.num)
 
-    def getDayOfWeek(self, tag):
-        if tag.string:
-            return filter(lambda d: d in tag.string, dayNames)
-        return None
+    def getDaysOfWeek(self, text):
+        return [Day(d) for d in dayNames if d in text]
 
 class Day(object):
     def __init__(self, name):
@@ -75,6 +73,12 @@ class Day(object):
         self.num = dayNums[name]
         self.headers = []
         self.workouts = []
+
+    def __str__(self):
+        return "Day({name},{num})".format(name=self.name, num=self.num)
+
+    def __repr__(self):
+        return "Day({name},{num})".format(name=self.name, num=self.num)
 
 def parseArgs():
     parser = argparse.ArgumentParser(description=__doc__)
