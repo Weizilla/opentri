@@ -61,9 +61,9 @@ class Generator(object):
 
     def genWeekHeader(self, week, start):
         subs = {"dayId": "week-{w}-h".format(w=week.num),
-                "dayName": "Week {w} - {d:%b} {d.day}".format(w=week.num, d=start),
-                "dayHeader": "",
-                "dayLong": "<br/>".join(week.headers)}
+                "weekName": "Week {w} - {d:%b} {d.day}".format(w=week.num, d=start),
+                "weekHeader": "<br/>".join(week.headers),
+                "weekHeaderLong": week.headerLong}
         return weekHeaderTemplate.substitute(subs)
 
     def genDay(self, day, week):
