@@ -10,7 +10,7 @@ from local import LocalSource
 dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 dayNums = {day : num for num, day in enumerate(dayNames)}
 removes = ["font", "hr", "div", "br", "center", "p", "h3"]
-replaces = [("\n", " ")]
+replaces = [("\n", " "), ("dl", "ul"), ("dd", "li"), ("dt", "li")]
 
 def createTag(html, name, string):
     tag = html.new_tag(name)
@@ -34,7 +34,12 @@ class Week(object):
                 html = htmlFile.read()
         else:
             raise ValueError("Invalid source {}".format(self.url))
-        return BeautifulSoup(html.decode("utf-8").replace("\n", " "))
+
+        html = html.decode("utf-8")
+        for replace in replaces:
+            html = html.replace(*replace) 
+            html = html.replace(replace[0].upper(), replace[1]) 
+        return BeautifulSoup(html)
 
     def clean(self, html):
         for remove in removes:
