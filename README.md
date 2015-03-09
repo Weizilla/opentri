@@ -13,3 +13,4 @@ Parses [Open Tri Week Workouts](http://opentri-training.com/free/ultra/index.htm
 * Less indentation of workout in a day 
 
 ### Bugs
+* Generate html pages in target folder instead of html folder. copy css and js files there too
