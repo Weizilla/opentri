@@ -5,6 +5,7 @@ function getWeekStart(week) {
 
 $(document).ready(function() {
     $(".dayLong").hide();
+    $("#overlay").hide();
 
     if (! window.matchMedia('screen and (min-width: 64em)').matches) {
         $(".weekDays").hide();
@@ -23,8 +24,22 @@ $(document).ready(function() {
         }
     });
 
-    $(".dayLong, .dayShort").click(function() {
-        var target = $(this).parent().attr("id");
+    $(".expandLink").click(function(e) {
+        var target = $(this).parents(".day").attr("id");
+        var html = $("#" + target + " .dayWorkout").html();
+        $("#overlay").html(html);
+        $("#overlay").show();
+        $("body").addClass("noScroll");
+        e.preventDefault();
+    });
+
+    $("#overlay").click(function() {
+        $(this).hide();
+        $("body").removeClass("noScroll");
+    });
+
+    $(".dayWorkout, .dayShort").click(function() {
+        var target = $(this).parents(".day").attr("id");
         $("#" + target + " .dayShort").toggleClass("dayShortSelected");   
         $("#" + target + " .dayLong").toggle();   
     });
