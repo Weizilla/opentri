@@ -10,7 +10,7 @@ from local import LocalSource
 dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 dayNums = {day : num for num, day in enumerate(dayNames)}
 removes = ["font", "hr", "div", "br", "center", "p", "h3"]
-replaces = [("\n", " "), ("dl", "ul"), ("dd", "li"), ("dt", "li")]
+replaces = [("\n", " ")]
 
 def createTag(html, name, string):
     tag = html.new_tag(name)
