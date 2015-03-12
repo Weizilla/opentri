@@ -5,10 +5,10 @@ Parses [Open Tri Week Workouts](http://opentri-training.com/free/ultra/index.htm
 ### Features
 * Link to expand all days
 * Remember which box was expanded when moving onto a new page
+* Displine based background color for workouts
 
 ### Improvements
-* Add css classes to workout headers in a day (RUN, BIKE) and give them colors
-* header for overlay box
+* Header for overlay box with date of overlay workout
 
 ### Bugs
 * Generate html pages in target folder instead of html folder. copy css and js files there too

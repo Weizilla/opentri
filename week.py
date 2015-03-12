@@ -10,6 +10,7 @@ from local import LocalSource
 dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 dayNums = {day : num for num, day in enumerate(dayNames)}
 removes = ["font", "hr", "div", "br", "center", "p", "h3"]
+workoutPattern = "((?:SWIM|BIKE|RUN) \d+:\d+)"
 replaces = [("\n", " ")]
 
 def createTag(html, name, string):
@@ -23,6 +24,7 @@ class Week(object):
         self.url = source.url
         html = self.read()
         self.clean(html)
+        self.addTags(html)
         self.headers, self.headerLong = self.parseHeader(html)
         self.days = sorted(self.parseDays(html), key=lambda x: x.num)
 
@@ -49,6 +51,17 @@ class Week(object):
         self.fixInvalidDayNames(html)
         return html
 
+    def addTags(self, html):
+        for tag in html("b"):
+            text = tag.get_text()
+            match = re.search(workoutPattern, text)
+            if match:
+                newTag = html.new_tag("span")
+                newTag["class"] = match.group(1).split(" ")[0].lower()
+                newTag.string = text
+                tag.clear()
+                tag.append(newTag)
+
     def parseHeader(self, html):
         text = unicode(html)
 
@@ -72,7 +85,7 @@ class Week(object):
         if match:
             for i, workout in enumerate(match.groups()):
                 day = Day(i)
-                headers = re.findall("((?:SWIM|BIKE|RUN) \d+:\d+)", workout)
+                headers = re.findall(workoutPattern, workout)
                 if headers:
                     day.headers.extend(headers)
                 day.workouts.append(workout.strip())

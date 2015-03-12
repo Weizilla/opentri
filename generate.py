@@ -69,9 +69,17 @@ class Generator(object):
     def genDay(self, day, week):
         subs = {"dayId": "week-{w}-{d}".format(w=week.num, d=day.num),
                 "dayName": day.name,
-                "dayHeader": "<br/>".join(day.headers),
+                "dayHeader": self.genDayHeaders(day),
                 "dayLong": "\n".join(day.workouts)}
         return dayTemplate.substitute(subs)
+
+    def genDayHeaders(self, day):
+        headers = []
+        span = "<span class={c}>{h}</span>"
+        for header in day.headers:
+            headerClass = header.split(" ")[0].lower()
+            headers.append(span.format(c=headerClass, h=header))
+        return "<br/>".join(headers)
 
 def parseArgs():
     parser = argparse.ArgumentParser(description=__doc__)
