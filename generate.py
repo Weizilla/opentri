@@ -8,6 +8,7 @@ import argparse
 from week import Week
 from operator import attrgetter
 from multiprocessing import Pool
+import json
 
 def template(filename):
     with open(filename) as file:
@@ -43,9 +44,10 @@ class Generator(object):
 
         startGen = weekStartGen()
         with open(path, "w") as output:
-            weeks = "".join(self.genWeek(w, startGen.next()) for w in self.weeks)
-            text = indexTemplate.substitute(weeks=weeks)
-            output.write(text.encode('utf8'))
+            json.dump(self.weeks, output)
+            #weeks = "".join(self.genWeek(w, startGen.next()) for w in self.weeks)
+            #text = indexTemplate.substitute(weeks=weeks)
+            #output.write(text.encode('utf8'))
             print "Wrote {p}".format(p=path)
 
     def genWeek(self, week, start):
@@ -93,4 +95,4 @@ if __name__ == "__main__":
     else:
         source = RemoteSource()
     generator = Generator(source)
-    generator.generate("html", "index.html")
+    generator.generate("html", "workouts.json")
