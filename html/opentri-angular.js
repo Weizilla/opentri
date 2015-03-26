@@ -1,17 +1,39 @@
 var app = angular.module("opentri", []);
 
 app.controller("WorkoutsController", function(WorkoutsFactory) {
-    var visibles = new Set();
-    this.toggle = function(id) {
-        if (visibles.has(id)) {
-            visibles.delete(id);
+    var visible = new Set();
+    this.toggleDay = function(id) {
+        if (visible.has(id)) {
+            visible.delete(id);
         } else {
-            visibles.add(id);
+            visible.add(id);
         }
+        return this.isDayVisible(id);
     };
-    this.isVisible = function(id) {
-        return visibles.has(id);
+    this.isDayVisible = function(id) {
+        return visible.has(id);
     };
+
+    this.toggleWeek = function(id) {
+        return this.toggleDay("week-" + id);    
+    };
+    this.isWeekVisible = function(id) {
+        return this.isDayVisible("week-" + id);
+    };
+
+    this.showAllDays = function(weekId) {
+        visible.add("week-" + weekId);
+        for (i = 1; i <= 7; i++) {
+            visible.add(weekId + "-" + i);
+        }
+    }
+
+    this.hideAllDays = function(weekId) {
+        for (i = 1; i <= 7; i++) {
+            visible.delete(weekId + "-" + i);
+        }
+    }
+
     this.workouts = WorkoutsFactory;
 });
 

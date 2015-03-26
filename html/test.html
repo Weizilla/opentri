@@ -12,21 +12,31 @@
     <div ng-controller="WorkoutsController as workoutsController">
         <div class="pure-u-1" 
             ng-repeat="week in workoutsController.workouts">
-            <div class="pure-u-2-24">
-                <div ng-click="workoutsController.toggle(week.weekNum)">
-                {{ week.weekNum }} - {{ week.startDate}} <br\>
-                    {{ week.weekTotals | json }}
-                </div>
-                <div ng-show="workoutsController.isVisible(week.weekNum)">
-                    {{ week.weekHeader}}
-                </div>
+            <div class="pure-u-1">
+                {{ week.weekNum }} - {{ week.startDate}}
+                <a href="" 
+                    ng-click="workoutsController.toggleWeek(week.weekNum)">Week</a> | 
+                Days 
+                <a href="" ng-click="workoutsController.showAllDays(week.weekNum)">Show</a> - 
+                <a href="" ng-click="workoutsController.hideAllDays(week.weekNum)">Hide</a>
             </div>
-            <div class="pure-u-3-24" ng-repeat="day in week.days">
-                <div ng-click="workoutsController.toggle(day.dayId)" >
-                    {{day.dayTotals | json}}
+            <div clas="pure-u-1" ng-show="workoutsController.isWeekVisible(week.weekNum)">
+                <div class="pure-u-2-24">
+                    <div ng-click="workoutsController.toggleDay(week.weekNum)">
+                        {{ week.weekNum }} - {{ week.startDate}} <br\>
+                        {{ week.weekTotals | json }}
+                    </div>
+                    <div ng-show="workoutsController.isDayVisible(week.weekNum)">
+                        {{ week.weekHeader}}
+                    </div>
                 </div>
-                <div ng-show="workoutsController.isVisible(day.dayId)">
-                    {{day.dayWorkout}}
+                <div class="pure-u-3-24" ng-repeat="day in week.days">
+                    <div ng-click="workoutsController.toggleDay(day.dayId)" >
+                        {{day.dayTotals | json}}
+                    </div>
+                    <div ng-show="workoutsController.isDayVisible(day.dayId)">
+                        {{day.dayWorkout}}
+                    </div>
                 </div>
             </div>
         </div>
