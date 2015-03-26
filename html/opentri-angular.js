@@ -1,9 +1,6 @@
 var app = angular.module("opentri", []);
 
-app.factory("WorkoutsFactory", function() {
-});
-
-app.controller("WorkoutsController", function() {
+app.controller("WorkoutsController", function(WorkoutsFactory) {
     var visibles = new Set();
     this.toggleDay = function(day) {
         if (visibles.has(day.dayId)) {
@@ -15,7 +12,11 @@ app.controller("WorkoutsController", function() {
     this.isVisible = function(day) {
         return visibles.has(day.dayId);
     };
-    this.workouts = [
+    this.workouts = WorkoutsFactory;
+});
+
+app.factory("WorkoutsFactory", function() {
+    return [
         {
             weekNum: 1,
             startDate: "2015-1-1",
@@ -179,5 +180,5 @@ app.controller("WorkoutsController", function() {
                 },
             ]
         }
-    ]
+    ];
 });
