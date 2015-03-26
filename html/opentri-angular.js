@@ -2,15 +2,15 @@ var app = angular.module("opentri", []);
 
 app.controller("WorkoutsController", function(WorkoutsFactory) {
     var visibles = new Set();
-    this.toggleDay = function(day) {
-        if (visibles.has(day.dayId)) {
-            visibles.delete(day.dayId);
+    this.toggle = function(id) {
+        if (visibles.has(id)) {
+            visibles.delete(id);
         } else {
-            visibles.add(day.dayId);
+            visibles.add(id);
         }
     };
-    this.isVisible = function(day) {
-        return visibles.has(day.dayId);
+    this.isVisible = function(id) {
+        return visibles.has(id);
     };
     this.workouts = WorkoutsFactory;
 });

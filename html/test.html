@@ -13,14 +13,19 @@
         <div class="pure-u-1" 
             ng-repeat="week in workoutsController.workouts">
             <div class="pure-u-2-24">
+                <div ng-click="workoutsController.toggle(week.weekNum)">
                 {{ week.weekNum }} - {{ week.startDate}} <br\>
-                {{ week.weekHeader}}
+                    {{ week.weekTotals | json }}
+                </div>
+                <div ng-show="workoutsController.isVisible(week.weekNum)">
+                    {{ week.weekHeader}}
+                </div>
             </div>
             <div class="pure-u-3-24" ng-repeat="day in week.days">
-                <div ng-click="workoutsController.toggleDay(day)" >
+                <div ng-click="workoutsController.toggle(day.dayId)" >
                     {{day.dayTotals | json}}
                 </div>
-                <div ng-show="workoutsController.isVisible(day)">
+                <div ng-show="workoutsController.isVisible(day.dayId)">
                     {{day.dayWorkout}}
                 </div>
             </div>
