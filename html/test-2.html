@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="opentri">
+<head>
+  <meta charset="utf-8">
+  <title>my html file</title>
+  <link rel="stylesheet" href="purecss/pure.css">
+  <link rel="stylesheet" href="opentri-angular.css">
+  <script src="angular/angular.js"></script>
+  <script src="opentri-angular.js"></script>
+</head>
+<body class="pure-g">
+    <div ng-controller="WorkoutsController as workoutsController">
+        <div class="pure-u-1" 
+            ng-repeat="week in workoutsController.workouts">
+            <div class="pure-u-1">
+                {{ week | json }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
