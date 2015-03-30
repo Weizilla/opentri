@@ -23,7 +23,12 @@ class LocalSource(object):
     def parseWeek(self, path):
         filename = basename(path)
         weekNum = filename[filename.index("-") + 1:filename.index(".")]
-        return WeekSource(weekNum, os.path.abspath(path))
+        text = self.read(path)
+        return WeekSource(weekNum, os.path.abspath(path), text)
+
+    def read(self, path):
+        with open(path) as htmlFile:
+            return htmlFile.read().decode("utf-8")
 
 def parseArgs():
     parser = argparse.ArgumentParser(description=__doc__)
