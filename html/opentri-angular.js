@@ -49,3 +49,9 @@ app.factory("WorkoutsFactory", function($http) {
         }
     };
 });
+
+app.filter("sanitize", function($sce) {
+    return function(htmlCode) {
+        return $sce.trustAsHtml(htmlCode);
+    };
+});

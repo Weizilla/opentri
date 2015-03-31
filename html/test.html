@@ -26,16 +26,14 @@
                         {{ week.weekNum }} - {{ week.startDate}} <br\>
                         {{ week.weekTotals | json }}
                     </div>
-                    <div ng-show="workoutsController.isDayVisible(week.weekNum)">
-                        {{ week.weekHeader}}
+                    <div ng-bind-html="week.weekHeader | sanitize" ng-show="workoutsController.isDayVisible(week.weekNum)">
                     </div>
                 </div>
                 <div class="pure-u-3-24" ng-repeat="day in week.days">
                     <div ng-click="workoutsController.toggleDay(day.dayId)" >
                         {{day.dayTotals | json}}
                     </div>
-                    <div ng-show="workoutsController.isDayVisible(day.dayId)">
-                        {{day.dayWorkout}}
+                    <div ng-bind-html="day.dayWorkout | sanitize" ng-show="workoutsController.isDayVisible(day.dayId)">
                     </div>
                 </div>
             </div>
