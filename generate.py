@@ -26,17 +26,25 @@ class Generator(object):
     def __init__(self, source):
         self.source = source
 
-    def generate(self, directory, filename):
-        if not os.path.isdir(directory):
-            os.makedirs(directory)
-        path = os.path.join(directory, filename)
+    def generate(self):
+        pool = Pool(6)
+        weeks = pool.map(createWeek, self.source.weeks)
 
         startGen = weekStartGen()
-        weekSources = sorted(source.weeks, key=attrgetter("num"))
-        pool = Pool(6)
-        weeks = [w.__dict__ for w in pool.map(createWeek, weekSources)]
+        self.weeks = sorted(weeks, key=lambda w: w.weekNum)
+        for week in self.weeks:
+            week.startDate = "{d.year}-{d.month}-{d.day}".format(d=startGen.next())
+        return self.weeks
+
+    def write(self, directory, filename):
+        if not os.path.isdir(directory):
+            os.makedirs(directory)
+
+        path = os.path.join(directory, filename)
         with open(path, "w") as output:
-            json.dump(weeks, output, indent=2, separators=(',', ': '))
+            json.dump(self.weeks, output, 
+                default=lambda o: o.__dict__, 
+                indent=2, separators=(',', ': '))
             print "Wrote {p}".format(p=path)
 
 def parseArgs():
@@ -51,4 +59,5 @@ if __name__ == "__main__":
     else:
         source = RemoteSource()
     generator = Generator(source)
-    generator.generate("html", "workouts.json")
+    generator.generate()
+    generator.write("html", "workouts.json")

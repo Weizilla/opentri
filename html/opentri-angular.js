@@ -19,6 +19,15 @@ app.controller("WorkoutsController", function(WorkoutsFactory) {
     vm.toggleWeek = function(id) {
         return vm.toggleDay("week-" + id);    
     };
+
+    vm.showWeek = function(id) {
+        visible.add("week-" + id);
+    };
+
+    vm.hideWeek = function(id) {
+        visible.delete("week-" + id);
+    };
+
     vm.isWeekVisible = function(id) {
         return vm.isDayVisible("week-" + id);
     };
@@ -39,6 +48,9 @@ app.controller("WorkoutsController", function(WorkoutsFactory) {
     vm.workouts = [];
     WorkoutsFactory.getWorkouts().success(function(data) {
         vm.workouts = data;
+        for (i = 1; i <= vm.workouts.length; i++) {
+            vm.showWeek(i);
+        }
     });
 });
 
@@ -53,5 +65,11 @@ app.factory("WorkoutsFactory", function($http) {
 app.filter("sanitize", function($sce) {
     return function(htmlCode) {
         return $sce.trustAsHtml(htmlCode);
+    };
+});
+
+app.filter("join", function() {
+    return function(items) {
+        return items.length > 0 ? items.join("<br/>") : "&nbsp;";
     };
 });

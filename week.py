@@ -27,14 +27,12 @@ class WeekParser(object):
         html = BeautifulSoup(text)
         self.fixHtml(html)
         self.addTags(html)
-        totals, header = self.parseHeader(html)
-        days = sorted(self.parseDays(html), key=lambda x: x.dayId)
 
         week = Week()
         week.weekNum = source.num
         week.url = source.url
-        week.totals = totals
-        week.days = [day.__dict__ for day in days]
+        week.weekTotals, week.weekHeader = self.parseHeader(html)
+        week.days = sorted(self.parseDays(html), key=lambda x: x.dayId)
         return week
 
     def clean(self, text):
