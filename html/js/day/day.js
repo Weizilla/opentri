@@ -1,19 +1,13 @@
-app.directive("day", function(){
+app.directive("day", ["visibility", function(visibility) {
     return {
         restrict: "E",
         scope: {
             day: "="
         },
         templateUrl: "js/day/day.html",
-        require: "^week",
-        link: function(scope, element, attrs, visCtrl) {
-            scope.toggle = function(id) {
-                visCtrl.toggle(id);
-            };
-            scope.isVisible = function(id) {
-                return visCtrl.isVisible(id);
-            };
+        link: function(scope) {
+            scope.toggle = visibility.toggle;
+            scope.isVisible = visibility.isVisible;
         }
     };
-});
-
+}]);

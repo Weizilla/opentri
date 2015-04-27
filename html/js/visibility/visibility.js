@@ -1,37 +1,38 @@
-app.controller("VisibilityController", function() {
-    var ctrl = this;
-    ctrl.visible = new Set();
+app.factory("visibility", function() {
+    var service = {};
+    service.visible = new Set();
 
-    ctrl.isVisible = function(id) {
-        return ctrl.visible.has(id);
+    service.isVisible = function(id) {
+        return service.visible.has(id);
     };
 
-    ctrl.toggle = function(id) {
-        if (ctrl.isVisible(id)) {
-            ctrl.hide(id);
+    service.toggle = function(id) {
+        if (service.isVisible(id)) {
+            service.hide(id);
         } else {
-            ctrl.show(id);
+            service.show(id);
         }
     };
 
-    ctrl.show = function(id) {
-        ctrl.visible.add(id);
+    service.show = function(id) {
+        service.visible.add(id);
     };
 
-    ctrl.hide = function(id) {
-        ctrl.visible.delete(id);
+    service.hide = function(id) {
+        service.visible.delete(id);
     };
 
-    ctrl.showDays = function(id) {
-        ctrl.show("week-" + id);
+    service.showDays = function(id) {
+        service.show("week-" + id);
         for (var i = 1; i <= 7; i++) {
-            ctrl.show("day-" + id + "-" + i)
+            service.show("day-" + id + "-" + i)
         }
     };
 
-    ctrl.hideDays = function(id) {
+    service.hideDays = function(id) {
         for (var i = 1; i <= 7; i++) {
-            ctrl.hide("day-" + id + "-" + i)
+            service.hide("day-" + id + "-" + i)
         }
     };
+    return service;
 });

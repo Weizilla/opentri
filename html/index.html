@@ -15,12 +15,16 @@
         <div class="pure-u-1" ng-repeat="week in workoutCtrl.workouts">
             <week week="week""></week>
         </div>
+        <h1>PAST</h1>
+        <div class="pure-u-1" ng-repeat="week in workoutCtrl.past">
+            <week week="week""></week>
+        </div>
     </div>
 
     <script src="js/app.js"></script>
     <script src="js/reader/reader.js"></script>
-    <script src="js/workout/workout.js"></script>
     <script src="js/visibility/visibility.js"></script>
+    <script src="js/workout/workout.js"></script>
     <script src="js/week/week.js"></script>
     <script src="js/week/header.js"></script>
     <script src="js/day/day.js"></script>
