@@ -1,12 +1,11 @@
 <div>
-    <div class="dayShort noselect">
+    <div class="dayShort noselect" ng-click="toggle(day.id)">
         <span class="dayName">{{ day.dayOfWeek }}</span>
-        <div ng-bind-html="day.dayTotals | join | sanitize"
-             ng-click="toggle(day.id)"></div>
+        <div ng-bind-html="day.dayTotals | join | sanitize"></div>
     </div>
     <div class="dayLong noselect"
          ng-bind-html="day.dayWorkout | sanitize"
          ng-show="isVisible(day.id)"
-            ng-click="toggle(day.id)">
+         ng-click="toggle(day.id)">
     </div>
 </div>
