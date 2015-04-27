@@ -24,12 +24,14 @@ app.factory("visibility", function() {
 
     service.showDays = function(id) {
         service.show("week-" + id);
+        service.show("header-" + id);
         for (var i = 1; i <= 7; i++) {
             service.show("day-" + id + "-" + i)
         }
     };
 
     service.hideDays = function(id) {
+        service.hide("header-" + id);
         for (var i = 1; i <= 7; i++) {
             service.hide("day-" + id + "-" + i)
         }

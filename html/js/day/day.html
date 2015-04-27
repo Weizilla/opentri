@@ -1,8 +1,10 @@
 <div>
-    <div class="dayShort noselect">
+    <div class="dayShort noSelect"
+         ng-class="{dayShortSelected: isVisible(day.id)}"
+         ng-click="expand(day)">
         <div class="fa pull-right"
              ng-class="isVisible(day.id) ? 'fa-chevron-up' : 'fa-chevron-down'"
-             ng-click="toggle(day.id)"></div>
+             ng-click="toggle(day.id);$event.stopPropagation()"></div>
         <span class="dayName">{{ day.dayOfWeek }}</span>
         <div>
             <div ng-repeat="total in day.dayTotals">
@@ -10,7 +12,7 @@
             </div>
         </div>
     </div>
-    <div class="dayLong noselect"
+    <div class="dayLong noSelect"
          ng-bind-html="day.dayWorkout | sanitize"
          ng-show="isVisible(day.id)"
          ng-click="toggle(day.id)">

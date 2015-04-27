@@ -1,5 +1,6 @@
 <div>
-    <div class="dayShort">
+    <div class="dayShort"
+         ng-class="{dayShortSelected: isVisible(week.weekNum)}">
         <div class="pure-u-8-12">
             <div class="fa pull-right"
                  ng-class="isVisible(week.weekNum) ? 'fa-chevron-up' : 'fa-chevron-down'"
