@@ -1,4 +1,4 @@
-app.filter("join", function () {
+app.filter("totals", function () {
     return function (items) {
         return items.length > 0 ? items.join("<br/>") : "&nbsp;";
     };

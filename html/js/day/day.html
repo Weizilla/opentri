@@ -1,7 +1,11 @@
 <div>
     <div class="dayShort noselect" ng-click="toggle(day.id)">
         <span class="dayName">{{ day.dayOfWeek }}</span>
-        <div ng-bind-html="day.dayTotals | join | sanitize"></div>
+        <div>
+            <div ng-repeat="total in day.dayTotals">
+                <span ng-class="total[0] | lowercase">{{ total.join(" ") }}</span>
+            </div>
+        </div>
     </div>
     <div class="dayLong noselect"
          ng-bind-html="day.dayWorkout | sanitize"

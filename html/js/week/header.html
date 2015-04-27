@@ -1,9 +1,10 @@
 <div>
     <div class="dayShort"
          ng-click="toggle(week.weekNum)">
-        {{ week.weekTotals.swim}}
-        {{ week.weekTotals.bike}}
-        {{ week.weekTotals.run}}
+        <span class="swim">{{ week.weekTotals.swim}}</span>
+        <span class="bike">{{ week.weekTotals.bike}}</span>
+        <span class="run">{{ week.weekTotals.run}}</span>
+        <br>
         {{ week.weekTotals.total}}
     </div>
     <div class="dayLong" ng-bind-html="week.weekHeader | sanitize"
