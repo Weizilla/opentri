@@ -30,9 +30,10 @@ class WeekParser(object):
 
         week = Week()
         week.weekNum = source.num
+        week.id = "week-{n}".format(n=source.num)
         week.url = source.url
         week.weekTotals, week.weekHeader = self.parseHeader(html)
-        week.days = sorted(self.parseDays(html), key=lambda x: x.dayId)
+        week.days = sorted(self.parseDays(html), key=lambda x: x.id)
         return week
 
     def clean(self, text):

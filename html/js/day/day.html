@@ -1,0 +1,10 @@
+<div>
+    <div class="dayShort">
+        <span class="dayName">{{ day.dayOfWeek }}</span>
+        <div ng-bind-html="day.dayTotals | join | sanitize"></div>
+         <!--ng-click="workoutsController.toggleDay(day.dayId)">-->
+    </div>
+    <div class="dayLong" ng-bind-html="day.dayWorkout | sanitize">
+         <!--ng-show="workoutsController.isDayVisible(day.dayId)">-->
+    </div>
+</div>

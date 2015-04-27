@@ -17,7 +17,7 @@ class DayParser(object):
 
     def parse(self, dayNum, html):
         day = Day()
-        day.dayId = "{w}-{d}".format(w=self.weekNum, d=(dayNum + 1))
+        day.id = "day-{w}-{d}".format(w=self.weekNum, d=(dayNum + 1))
         day.dayOfWeek = dayNames[dayNum]
         day.dayTotals = re.findall(totalsPattern, html) or []
         day.dayWorkout = html.strip()

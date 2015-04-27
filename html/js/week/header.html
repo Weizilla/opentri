@@ -1,0 +1,9 @@
+<div>
+    <div class="dayShort">
+        {{ week.weekTotals.swim}}
+        {{ week.weekTotals.bike}}
+        {{ week.weekTotals.run}}
+        {{ week.weekTotals.total}}
+    </div>
+    <div class="dayLong" ng-bind-html="week.weekHeader | sanitize"></div>
+</div>

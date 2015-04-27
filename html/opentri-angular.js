@@ -57,7 +57,7 @@ app.controller("WorkoutsController", function(WorkoutsFactory) {
 app.factory("WorkoutsFactory", function($http) {
     return {
         getWorkouts: function() {
-             return $http.get("/workouts.json");
+             return $http.get("workouts.json");
         }
     };
 });

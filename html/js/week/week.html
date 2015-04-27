@@ -1,0 +1,13 @@
+<div class="pure-u-1 week">
+    <div class="pure-u-1">
+        <span class="weekName">Week {{ week.weekNum }}</span> - {{ week.startDate | date }}
+    </div>
+    <div>
+        <div class="pure-u-2-24">
+            <week-header week="week"></week-header>
+        </div>
+        <div class="pure-u-1-8" ng-repeat="day in week.days">
+            <day day="day"></day>
+        </div>
+    </div>
+</div>
