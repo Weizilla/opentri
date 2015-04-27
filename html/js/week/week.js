@@ -4,6 +4,8 @@ app.directive("week", function() {
         scope: {
             week: "="
         },
-        templateUrl: "js/week/week.html"
+        templateUrl: "js/week/week.html",
+        controller: "VisibilityController",
+        controllerAs: "ctrl"
     }
 });

@@ -1,8 +1,18 @@
 <div class="pure-u-1 week">
-    <div class="pure-u-1">
-        <span class="weekName">Week {{ week.weekNum }}</span> - {{ week.startDate | date }}
-    </div>
     <div>
+        <span class="weekName">Week {{ week.weekNum }}</span> - {{ week.startDate | date }} -
+        W [
+        <a href="" ng-click="ctrl.show(week.id)">S</a>
+        |
+        <a href="" ng-click="ctrl.hide(week.id)">H</a>
+        ] -
+        D [
+        <a href="" ng-click="ctrl.showDays(week.weekNum)">S</a>
+        |
+        <a href="" ng-click="ctrl.hideDays(week.weekNum)">H</a>
+        ] - Src
+    </div>
+    <div ng-show="ctrl.visible.has(week.id)">
         <div class="pure-u-2-24">
             <week-header week="week"></week-header>
         </div>
