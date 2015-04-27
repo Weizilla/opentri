@@ -5,7 +5,7 @@
 /*}*/
 
 .week {
-    margin: 5px;
+    margin: 2px;
     padding: 5px;
     background-color: #F0F0F0;
 }
@@ -19,7 +19,7 @@
 }
 
 .dayShort {
-    margin: 5px 5px 0px 5px;
+    margin: 2px 2px 0px 2px;
     padding: 5px;
     background-color: #E5F3FF;
 }
@@ -29,11 +29,15 @@
 }
 
 .dayLong {
-    margin: 0px 5px 5px 5px;
+    margin: 0px 2px 2px 2px;
     padding: 5px;
     background-color: white;
     position: relative;
     z-index: 0;
+}
+
+.slide {
+    text-align: right;
 }
 
 .week, .dayLong, .dayShort {

@@ -1,5 +1,8 @@
 <div>
-    <div class="dayShort noselect" ng-click="toggle(day.id)">
+    <div class="dayShort noselect">
+        <div class="fa pull-right"
+             ng-class="isVisible(day.id) ? 'fa-chevron-up' : 'fa-chevron-down'"
+             ng-click="toggle(day.id)"></div>
         <span class="dayName">{{ day.dayOfWeek }}</span>
         <div>
             <div ng-repeat="total in day.dayTotals">
