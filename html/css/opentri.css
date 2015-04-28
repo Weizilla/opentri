@@ -1,11 +1,5 @@
-.pure-g > div {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
 .week {
-    margin: 5px;
+    margin: 2px;
     padding: 5px;
     background-color: #F0F0F0;
 }
@@ -19,7 +13,7 @@
 }
 
 .dayShort {
-    margin: 5px 5px 0px 5px;
+    margin: 2px 2px 0px 2px;
     padding: 5px;
     background-color: #E5F3FF;
 }
@@ -29,7 +23,7 @@
 }
 
 .dayLong {
-    margin: 0px 5px 5px 5px;
+    margin: 0px 2px 2px 2px;
     padding: 5px;
     background-color: white;
     position: relative;
@@ -38,10 +32,6 @@
 
 .week, .dayLong, .dayShort {
     border: 1px solid black;
-}
-
-.weekToggle {
-    margin: 2px;
 }
 
 .run {
@@ -66,11 +56,11 @@ dd {
     margin: 4px;
 }
 
-#overlay {
+.expand {
     position: fixed;
     left: 50%;
-    margin-left: -45%;
-    width: 90%;
+    margin-left: -35%;
+    width: 70%;
     top: 5%;
     bottom: 5%;
     border: 2px solid black;
@@ -86,20 +76,14 @@ dd {
         width: 50%;
         top: 10%;
         bottom: 10%;
-    } 
+    }
 }
 
 .noScroll {
     overflow: hidden;
 }
 
-.expand {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.noselect {
+.noSelect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

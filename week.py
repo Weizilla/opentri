@@ -5,45 +5,44 @@ from bs4 import BeautifulSoup
 import mechanize
 import os
 import re
+import json
 from local import LocalSource
+from day import DayParser, dayNames
 
-dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-dayNums = {day : num for num, day in enumerate(dayNames)}
 removes = ["font", "hr", "div", "br", "center", "p", "h3"]
-workoutPattern = "((?:SWIM|BIKE|RUN) \d+:\d+)"
 replaces = [("\n", " ")]
+dayRegex = "(.*)".join("<b>" + d + "</b>" for d in dayNames) + "(.*)</body>"
+workoutPattern = "((?:SWIM|BIKE|RUN) \d+:\d+)"
 
 def createTag(html, name, string):
     tag = html.new_tag(name)
     tag.string = string
     return tag
 
-class Week(object):
-    def __init__(self, source):
+class WeekParser(object):
+    def parse(self, source):
         self.num = source.num
         self.url = source.url
-        html = self.read()
-        self.clean(html)
+        text = self.clean(source.text)
+        html = BeautifulSoup(text)
+        self.fixHtml(html)
         self.addTags(html)
-        self.headers, self.headerLong = self.parseHeader(html)
-        self.days = sorted(self.parseDays(html), key=lambda x: x.num)
 
-    def read(self):
-        if self.url.startswith("http"):
-            html = mechanize.Browser().open(self.url).get_data()
-        elif os.path.isfile(self.url):
-            with open(self.url) as htmlFile:
-                html = htmlFile.read()
-        else:
-            raise ValueError("Invalid source {}".format(self.url))
+        week = Week()
+        week.weekNum = source.num
+        week.id = "week-{n}".format(n=source.num)
+        week.url = source.url
+        week.weekTotals, week.weekHeader = self.parseHeader(html)
+        week.days = sorted(self.parseDays(html), key=lambda x: x.id)
+        return week
 
-        html = html.decode("utf-8")
+    def clean(self, text):
         for replace in replaces:
-            html = html.replace(*replace) 
-            html = html.replace(replace[0].upper(), replace[1]) 
-        return BeautifulSoup(html)
+            text = text.replace(*replace) 
+            text = text.replace(replace[0].upper(), replace[1]) 
+        return text
 
-    def clean(self, html):
+    def fixHtml(self, html):
         for remove in removes:
             [r.unwrap() for r in html(remove)]
         [a.decompose() for a in html("a", attrs={"name": True})]
@@ -64,36 +63,24 @@ class Week(object):
 
     def parseHeader(self, html):
         text = unicode(html)
-
-        regex = r"Swim (?P<s>\d+:\d+) - Bike (?P<b>\d+:\d+) - Run (?P<r>\d+:\d+) -- Total: (?P<t>\d+:\d+)"
+        regex = r"Swim (?P<swim>\d+:\d+) - Bike (?P<bike>\d+:\d+) - Run (?P<run>\d+:\d+) -- Total: (?P<total>\d+:\d+)"
         match = re.search(regex, text)
-        headers = ["{s} {b} {r}".format(**(match.groupdict())), "Total {t}".format(**match.groupdict())] if match else []
-
+        totals = match.groupdict() if match else []
         regex = r"Ultra Distance (?:Group|Training)(.*)<b>Monday</b>"
         match = re.search(regex, text)
-        headerLong = match.group(1).strip() if match else None
-
-        return headers, headerLong
+        header = match.group(1).strip() if match else None
+        return totals, header
 
     def parseDays(self, html):
+        dayParser = DayParser(self.num)
         days = []
-
-        text = unicode(html)
-
-        regex = "(.*)".join("<b>" + d + "</b>" for d in dayNames) + "(.*)</body>"
-        match = re.search(regex, text)
+        match = re.search(dayRegex, unicode(html))
         if match:
             for i, workout in enumerate(match.groups()):
-                day = Day(i)
-                headers = re.findall(workoutPattern, workout)
-                if headers:
-                    day.headers.extend(headers)
-                day.workouts.append(workout.strip())
+                day = dayParser.parse(i, workout)
                 days.append(day)
         else:
-            print text
-            print regex
-
+            print text, regex
         return days
 
     def getAnchors(self, html):
@@ -126,6 +113,9 @@ class Week(object):
             else:
                 raise ValueError("More than one day in single tag:" + unicode(anchor.tag))
 
+class Week(object):
+    pass
+
 class Anchor(object):
     def __init__(self, tag):
         self.tag = tag
@@ -133,19 +123,6 @@ class Anchor(object):
 
     def __repr__(self):
         return "Anchor({t},{d})".format(t=self.tag, d=self.days)
-
-class Day(object):
-    def __init__(self, num):
-        self.name = dayNames[num]
-        self.num = num
-        self.headers = []
-        self.workouts = []
-
-    def __str__(self):
-        return "Day({name},{num})".format(name=self.name, num=self.num)
-
-    def __repr__(self):
-        return "Day({name},{num})".format(name=self.name, num=self.num)
 
 def parseArgs():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -155,15 +132,6 @@ def parseArgs():
 if __name__ == "__main__":
     args = parseArgs()
     source = LocalSource(args.source).weeks[0]
-    week = Week(source)
-    print week.headers
-    print "-----------------------"
-    print week.headerLong
-    print "============================="
-    for day in week.days:
-        print day.num, day.name
-        print "--------------"
-        print "\n".join(day.headers)
-        print "--------------"
-        print "\n".join(day.workouts)
-        print "====================================="
+    weekParser = WeekParser()
+    week = weekParser.parse(source)
+    print json.dumps(week.__dict__)
