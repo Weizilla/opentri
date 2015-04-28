@@ -29,7 +29,7 @@ class RemoteSource(object):
         self.br = mechanize.Browser()
         self.parseLinks()
         self.addNums()
-        self.weeks = [WeekSource(l.num, l.url) for l in self.links]
+        self.weeks = [WeekSource(l.num, l.url, self.open(l.url)) for l in self.links]
 
     def parseLinks(self):
         data = self.open(index)
