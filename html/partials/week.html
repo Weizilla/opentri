@@ -1,10 +1,8 @@
 <div class="week">
-    <div>
-        <span class="weekName">Week {{ week.weekNum }}</span> - {{ week.startDate | date }} -
+    <div ng-click="show(week.id)">
+        <span class="weekName">Week {{ week.weekNum }}</span> - {{ week.startDate | date:"M/d" }} -
         W [
-        <a href="" ng-click="show(week.id)">S</a>
-        |
-        <a href="" ng-click="hide(week.id)">H</a>
+        <a href="" ng-click="toggle(week.id);$event.stopPropagation()">T</a>
         ] -
         D [
         <a href="" ng-click="showDays(week.weekNum)">S</a>
@@ -14,10 +12,10 @@
         <a target="_blank" ng-href="{{ week.url }}">Src</a>
     </div>
     <div ng-show="isVisible(week.id)">
-        <div class="pure-u-2-24">
+        <div class="pure-u-1 pure-u-lg-2-24">
             <week-header week="week"></week-header>
         </div>
-        <div class="pure-u-1-8" ng-repeat="day in week.days">
+        <div class="pure-u-1 pure-u-lg-1-8" ng-repeat="day in week.days">
             <day day="day"></day>
         </div>
     </div>

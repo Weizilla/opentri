@@ -1,5 +1,5 @@
-app.controller("WorkoutController", ["reader", "visibility",
-    function(reader, visibility) {
+app.controller("WorkoutController", ["$window", "reader", "visibility",
+    function($window, reader, visibility) {
     var vm = this;
     vm.workouts = [];
     vm.past = [];
@@ -11,11 +11,13 @@ app.controller("WorkoutController", ["reader", "visibility",
 
         for (var i = 0; i < data.length; i++) {
             var week = data[i];
-            if (week.startDate < lastWeek) {
-                vm.past.push(week);
-            } else {
+            if (week.startDate >= lastWeek) {
                 vm.workouts.push(week);
-                visibility.show(week.id);
+                if ($window.innerWidth > 1024 || today > week.startDate) {
+                    visibility.show(week.id);
+                }
+            } else {
+                vm.past.push(week);
             }
         }
     });

@@ -59,8 +59,8 @@ dd {
 .expand {
     position: fixed;
     left: 50%;
-    margin-left: -35%;
-    width: 70%;
+    margin-left: -45%;
+    width: 90%;
     top: 5%;
     bottom: 5%;
     border: 2px solid black;
@@ -71,7 +71,7 @@ dd {
 }
 
 @media screen and (min-width: 1024px) {
-    #overlay {
+    .expand {
         margin-left: -25%;
         width: 50%;
         top: 10%;

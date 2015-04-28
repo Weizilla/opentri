@@ -15,16 +15,15 @@
 
     <div ng-view=""></div>
     <div ng-controller="WorkoutController as ctrl">
+        <h3 class="pure-u-1">WORKOUTS</h3>
         <div class="pure-u-1" ng-repeat="week in ctrl.workouts">
             <week week="week"></week>
         </div>
-        <h1>PAST</h1>
-
+        <h3 class="pure-u-1">PAST</h3>
         <div class="pure-u-1" ng-repeat="week in ctrl.past">
             <week week="week"></week>
         </div>
     </div>
-
     <script src="js/app.js"></script>
     <script src="js/reader.js"></script>
     <script src="js/visibility.js"></script>
