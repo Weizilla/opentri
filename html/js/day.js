@@ -5,7 +5,7 @@ app.directive("day", ["visibility", "$location", "scroll",
             scope: {
                 day: "="
             },
-            templateUrl: "js/day/day.html",
+            templateUrl: "partials/day.html",
             link: function(scope) {
                 scope.toggle = visibility.toggle;
                 scope.isVisible = visibility.isVisible;

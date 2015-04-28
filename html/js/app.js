@@ -6,7 +6,7 @@ app.config(function($routeProvider) {
         .when("/:weekIndex/:dayIndex", {
             controller: "ExpandController",
             controllerAs: "ctrl",
-            templateUrl: "js/expand/expand.html"
+            templateUrl: "partials/expand.html"
         })
         .otherwise({
             redirectTo: "/"

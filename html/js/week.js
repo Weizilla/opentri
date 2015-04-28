@@ -4,7 +4,7 @@ app.directive("week", ["visibility", function(visibility) {
         scope: {
             week: "="
         },
-        templateUrl: "js/week/week.html",
+        templateUrl: "partials/week.html",
         link: function(scope) {
             scope.show = visibility.show;
             scope.hide = visibility.hide;

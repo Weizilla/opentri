@@ -3,6 +3,7 @@ Parses [Open Tri Week Workouts](http://opentri-training.com/free/ultra/index.htm
 
 ## TODO
 ### Next
+* determine site/js minimization and deployment workflow
 
 ### Features
 * Link to expand all days on whole page
