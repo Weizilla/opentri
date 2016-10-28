@@ -45,7 +45,7 @@ class Generator(object):
             json.dump(self.weeks, output, 
                 default=lambda o: o.__dict__, 
                 indent=2, separators=(',', ': '))
-            print "Wrote {p}".format(p=path)
+            print("Wrote {p}".format(p=path))
 
 def parseArgs():
     parser = argparse.ArgumentParser(description=__doc__)

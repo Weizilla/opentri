@@ -40,4 +40,4 @@ if __name__ == "__main__":
     source = LocalSource(args.path)
 
     for week in source.weeks:
-        print week
+        print(week)

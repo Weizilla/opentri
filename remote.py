@@ -75,7 +75,7 @@ class RemoteSource(object):
         path = os.path.join(directory, filename)
         with open(path, "w") as output:
             output.write(data)
-            print "Wrote ", path
+            print("Wrote {}".format(path))
 
 class Link(object):
     def __init__(self, linkType, linkNum, url):
@@ -101,7 +101,7 @@ if __name__ == "__main__":
     #for link in source.links:
     #    print link
     for week in source.weeks:
-        print week
+        print(week)
 
     if args.downloadDir:
         source.save(args.downloadDir)
