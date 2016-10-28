@@ -33,7 +33,7 @@ class RemoteSource(object):
 
     def parseLinks(self):
         data = self.open(index)
-        soup = BeautifulSoup(data)
+        soup = BeautifulSoup(data, "html.parser")
         for a in soup.find_all("a"):
             link = self.parseLink(a)
             if link:

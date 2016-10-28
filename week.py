@@ -24,7 +24,7 @@ class WeekParser(object):
         self.num = source.num
         self.url = source.url
         text = self.clean(source.text)
-        html = BeautifulSoup(text)
+        html = BeautifulSoup(text, "html.parser")
         self.fixHtml(html)
         self.addTags(html)
 
