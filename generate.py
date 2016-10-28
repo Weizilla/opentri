@@ -10,7 +10,7 @@ from operator import attrgetter
 from multiprocessing import Pool
 import json
 
-startDate = datetime.date(2015, 1, 5)
+startDate = datetime.date(2016, 11, 14)
 weekDelta = datetime.timedelta(weeks=1)
 def weekStartGen():
     currWeek = startDate

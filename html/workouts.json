@@ -1,6 +1,6 @@
 [
   {
-    "startDate": "2015-1-5",
+    "startDate": "2016-11-14",
     "weekTotals": {
       "swim": "2:30",
       "total": "8:05",
@@ -129,7 +129,7 @@
     "id": "week-1"
   },
   {
-    "startDate": "2015-1-12",
+    "startDate": "2016-11-21",
     "weekTotals": {
       "swim": "2:30",
       "total": "8:05",
@@ -258,7 +258,7 @@
     "id": "week-2"
   },
   {
-    "startDate": "2015-1-19",
+    "startDate": "2016-11-28",
     "weekTotals": {
       "swim": "2:30",
       "total": "8:10",
@@ -382,7 +382,7 @@
     "id": "week-3"
   },
   {
-    "startDate": "2015-1-26",
+    "startDate": "2016-12-5",
     "weekTotals": {
       "swim": "2:30",
       "total": "9:20",
@@ -511,7 +511,7 @@
     "id": "week-4"
   },
   {
-    "startDate": "2015-2-2",
+    "startDate": "2016-12-12",
     "weekTotals": {
       "swim": "2:30",
       "total": "10:50",
@@ -640,7 +640,7 @@
     "id": "week-5"
   },
   {
-    "startDate": "2015-2-9",
+    "startDate": "2016-12-19",
     "weekTotals": {
       "swim": "2:30",
       "total": "8:55",
@@ -760,7 +760,7 @@
     "id": "week-6"
   },
   {
-    "startDate": "2015-2-16",
+    "startDate": "2016-12-26",
     "weekTotals": {
       "swim": "2:30",
       "total": "9:30",
@@ -884,7 +884,7 @@
     "id": "week-7"
   },
   {
-    "startDate": "2015-2-23",
+    "startDate": "2017-1-2",
     "weekTotals": {
       "swim": "2:30",
       "total": "10:15",
@@ -1012,7 +1012,7 @@
     "id": "week-8"
   },
   {
-    "startDate": "2015-3-2",
+    "startDate": "2017-1-9",
     "weekTotals": {
       "swim": "2:30",
       "total": "11:55",
@@ -1144,7 +1144,7 @@
     "id": "week-9"
   },
   {
-    "startDate": "2015-3-9",
+    "startDate": "2017-1-16",
     "weekTotals": {
       "swim": "2:30",
       "total": "9:50",
@@ -1268,7 +1268,7 @@
     "id": "week-10"
   },
   {
-    "startDate": "2015-3-16",
+    "startDate": "2017-1-23",
     "weekTotals": {
       "swim": "2:30",
       "total": "13:10",
@@ -1400,7 +1400,7 @@
     "id": "week-11"
   },
   {
-    "startDate": "2015-3-23",
+    "startDate": "2017-1-30",
     "weekTotals": {
       "swim": "2:30",
       "total": "11:15",
@@ -1528,7 +1528,7 @@
     "id": "week-12"
   },
   {
-    "startDate": "2015-3-30",
+    "startDate": "2017-2-6",
     "weekTotals": {
       "swim": "2:30",
       "total": "9:55",
@@ -1652,7 +1652,7 @@
     "id": "week-13"
   },
   {
-    "startDate": "2015-4-6",
+    "startDate": "2017-2-13",
     "weekTotals": {
       "swim": "2:30",
       "total": "10:50",
@@ -1776,7 +1776,7 @@
     "id": "week-14"
   },
   {
-    "startDate": "2015-4-13",
+    "startDate": "2017-2-20",
     "weekTotals": {
       "swim": "2:30",
       "total": "10:50",
@@ -1900,7 +1900,7 @@
     "id": "week-15"
   },
   {
-    "startDate": "2015-4-20",
+    "startDate": "2017-2-27",
     "weekTotals": {
       "swim": "2:30",
       "total": "12:30",
@@ -2028,7 +2028,7 @@
     "id": "week-16"
   },
   {
-    "startDate": "2015-4-27",
+    "startDate": "2017-3-6",
     "weekTotals": {
       "swim": "2:30",
       "total": "14:20",
@@ -2160,7 +2160,7 @@
     "id": "week-17"
   },
   {
-    "startDate": "2015-5-4",
+    "startDate": "2017-3-13",
     "weekTotals": {
       "swim": "2:30",
       "total": "12:00",
@@ -2284,7 +2284,7 @@
     "id": "week-18"
   },
   {
-    "startDate": "2015-5-11",
+    "startDate": "2017-3-20",
     "weekTotals": {
       "swim": "2:30",
       "total": "12:10",
@@ -2408,7 +2408,7 @@
     "id": "week-19"
   },
   {
-    "startDate": "2015-5-18",
+    "startDate": "2017-3-27",
     "weekTotals": {
       "swim": "2:30",
       "total": "16:00",
@@ -2540,7 +2540,7 @@
     "id": "week-20"
   },
   {
-    "startDate": "2015-5-25",
+    "startDate": "2017-4-3",
     "weekTotals": {
       "swim": "2:30",
       "total": "13:45",
@@ -2668,7 +2668,7 @@
     "id": "week-21"
   },
   {
-    "startDate": "2015-6-1",
+    "startDate": "2017-4-10",
     "weekTotals": {
       "swim": "2:30",
       "total": "13:15",
@@ -2792,7 +2792,7 @@
     "id": "week-22"
   },
   {
-    "startDate": "2015-6-8",
+    "startDate": "2017-4-17",
     "weekTotals": {
       "swim": "3:00",
       "total": "13:30",
@@ -2924,7 +2924,7 @@
     "id": "week-23"
   },
   {
-    "startDate": "2015-6-15",
+    "startDate": "2017-4-24",
     "weekTotals": {
       "swim": "3:00",
       "total": "15:20",
@@ -3056,7 +3056,7 @@
     "id": "week-24"
   },
   {
-    "startDate": "2015-6-22",
+    "startDate": "2017-5-1",
     "weekTotals": {
       "swim": "3:00",
       "total": "14:45",
@@ -3188,7 +3188,7 @@
     "id": "week-25"
   },
   {
-    "startDate": "2015-6-29",
+    "startDate": "2017-5-8",
     "weekTotals": {
       "swim": "3:00",
       "total": "15:15",
@@ -3320,7 +3320,7 @@
     "id": "week-26"
   },
   {
-    "startDate": "2015-7-6",
+    "startDate": "2017-5-15",
     "weekTotals": {
       "swim": "2:30",
       "total": "12:00",
@@ -3448,7 +3448,7 @@
     "id": "week-27"
   },
   {
-    "startDate": "2015-7-13",
+    "startDate": "2017-5-22",
     "weekTotals": {
       "swim": "3:00",
       "total": "17:00",
@@ -3588,7 +3588,7 @@
     "id": "week-28"
   },
   {
-    "startDate": "2015-7-20",
+    "startDate": "2017-5-29",
     "weekTotals": {
       "swim": "3:00",
       "total": "18:20",
@@ -3724,7 +3724,7 @@
     "id": "week-29"
   },
   {
-    "startDate": "2015-7-27",
+    "startDate": "2017-6-5",
     "weekTotals": {
       "swim": "3:00",
       "total": "17:00",
@@ -3860,7 +3860,7 @@
     "id": "week-30"
   },
   {
-    "startDate": "2015-8-3",
+    "startDate": "2017-6-12",
     "weekTotals": {
       "swim": "3:00",
       "total": "19:00",
@@ -3893,7 +3893,7 @@
             "1:30"
           ]
         ],
-        "dayWorkout": "If you have a choice, do the workout of the sport in which you need the most help first. If you're a strong swimmer, do the bike workout first, or visa versa. Keep this in mind every day of the week. \u00a0Work on your weaknesses when you are most fresh and they will more quickly become your strengths! <dl> <dt> <b><span class=\"swim\">SWIM 0:45</span></b></dt> <dd> <u>WARM UP</u></dd> <dd> 300 Swim - 200 <a href=\"glossary.htm#Kick\">Kick</a> - 300 <a href=\"glossary.htm#Pull\">Pull</a></dd> <dd> <u>MAIN SET</u></dd> <dd> 30 x 50 w/10 sec rest, as follows:</dd> <dd> #1-10: gradually\u00a0<ahref>descend from 75% to 85% by #10</ahref></dd> <dd> #11-18: 25 Kick - 25 sprint</dd> <dd> #19-30: race pace -- each one @90+%</dd> <dd> <u>COOL DOWN</u></dd> <dd> 400 Pull @60-70%</dd> <dt> <b><span class=\"bike\">BIKE 1:30</span></b></dt> <dd> 20:00 getting your HR up to 70% -- straight into</dd> <dd> 5 x 20 sec fast spinning (100+ rpm cadence) w/40 sec recovery spin @90 rpm; then spin easy for several minutes</dd> <dd> <u>MAIN SET</u></dd> <dd> Today's set is a simple variation of last week's. Greg LeMond used the 3 x 5:00 set often to increase his power output on the bike; I'm altering it for you to add spice to the routine.</dd> <dd> <b>One time through the following set. All the hard repeats are done @ 92+% with an equal amount of recovery time @ 50-60%</b></dd> <dd> 5:00 fast/5:00 easy</dd> <dd> 4:00 fast/4:00 easy</dd> <dd> 3:00 fast/3:00 easy</dd> <dd> 2:00 fast/2:00 easy</dd> <dd> 1:00 fast/1:00 easy</dd> <dd> You'll have to put more effort into each repeat to get your HR above 92%, so be aggressive while staying relaxed.</dd> <dd> <u>COOL DOWN</u></dd> <dd> After the 1:00 easy, hold your HR at 70-75% for 25:00 before gradually slowing down to 60% with 10:00 left, and finally below 50% by the end.</dd> </dl> <b>DAILY TOTAL: 2:15</b>",
+        "dayWorkout": "If you have a choice, do the workout of the sport in which you need the most help first. If you're a strong swimmer, do the bike workout first, or visa versa. Keep this in mind every day of the week. \u00a0Work on your weaknesses when you are most fresh and they will more quickly become your strengths! <dl> <dt> <b><span class=\"swim\">SWIM 0:45</span></b></dt> <dd> <u>WARM UP</u></dd> <dd> 300 Swim - 200 <a href=\"glossary.htm#Kick\">Kick</a> - 300 <a href=\"glossary.htm#Pull\">Pull</a></dd> <dd> <u>MAIN SET</u></dd> <dd> 30 x 50 w/10 sec rest, as follows:</dd> <dd> #1-10: gradually\u00a0<ahref=\"glossary.htm#descending\">descend from 75% to 85% by #10</ahref=\"glossary.htm#descending\"></dd> <dd> #11-18: 25 Kick - 25 sprint</dd> <dd> #19-30: race pace -- each one @90+%</dd> <dd> <u>COOL DOWN</u></dd> <dd> 400 Pull @60-70%</dd> <dt> <b><span class=\"bike\">BIKE 1:30</span></b></dt> <dd> 20:00 getting your HR up to 70% -- straight into</dd> <dd> 5 x 20 sec fast spinning (100+ rpm cadence) w/40 sec recovery spin @90 rpm; then spin easy for several minutes</dd> <dd> <u>MAIN SET</u></dd> <dd> Today's set is a simple variation of last week's. Greg LeMond used the 3 x 5:00 set often to increase his power output on the bike; I'm altering it for you to add spice to the routine.</dd> <dd> <b>One time through the following set. All the hard repeats are done @ 92+% with an equal amount of recovery time @ 50-60%</b></dd> <dd> 5:00 fast/5:00 easy</dd> <dd> 4:00 fast/4:00 easy</dd> <dd> 3:00 fast/3:00 easy</dd> <dd> 2:00 fast/2:00 easy</dd> <dd> 1:00 fast/1:00 easy</dd> <dd> You'll have to put more effort into each repeat to get your HR above 92%, so be aggressive while staying relaxed.</dd> <dd> <u>COOL DOWN</u></dd> <dd> After the 1:00 easy, hold your HR at 70-75% for 25:00 before gradually slowing down to 60% with 10:00 left, and finally below 50% by the end.</dd> </dl> <b>DAILY TOTAL: 2:15</b>",
         "weekNum": 31,
         "id": "day-31-2"
       },
@@ -3996,7 +3996,7 @@
     "id": "week-31"
   },
   {
-    "startDate": "2015-8-10",
+    "startDate": "2017-6-19",
     "weekTotals": {
       "swim": "3:00",
       "total": "15:30",
@@ -4128,7 +4128,7 @@
     "id": "week-32"
   },
   {
-    "startDate": "2015-8-17",
+    "startDate": "2017-6-26",
     "weekTotals": {
       "swim": "3:00",
       "total": "15:30",
@@ -4260,7 +4260,7 @@
     "id": "week-33"
   },
   {
-    "startDate": "2015-8-24",
+    "startDate": "2017-7-3",
     "weekTotals": {
       "swim": "3:00",
       "total": "15:30",
@@ -4392,7 +4392,7 @@
     "id": "week-34"
   },
   {
-    "startDate": "2015-8-31",
+    "startDate": "2017-7-10",
     "weekTotals": {
       "swim": "2:00",
       "total": "10:55",
@@ -4520,7 +4520,7 @@
     "id": "week-35"
   },
   {
-    "startDate": "2015-9-7",
+    "startDate": "2017-7-17",
     "weekTotals": {
       "swim": "1:20",
       "total": "4:00",
@@ -4576,7 +4576,7 @@
             "0:30"
           ]
         ],
-        "dayWorkout": "<dl> <dt> <b><span class=\"run\">RUN 0:50</span></b></dt> <dd> 10:00 warm up jog, allowing your body to slowly get up to 65-70% by the end.</dd> <dd> After warming up, hold your HR at 75% for the next 15 minutes. Then jog easy @ 65% for 5 minutes.</dd> <dd> After jogging easy, go right into 4-5 x (:20 strides with 1:10 easy jogging)</dd> <dd> Cooldown to 50 minutes by bringing your HR below 60%.</dd> <dt> <b><span class=\"bike\">BIKE 0:30</span></b></dt> <dd> <u>WARM UP</u></dd> <dd> 10:00 spinning @90-95rpm</dd> <dd> - get your HR up to 60% in the first 6:00 and closer to 70% by 10:00</dd> <dd> <u>MAIN SET</u></dd> <dd> Get your HR up to 70-75% for the middle 10 minutes.</dd>  <dd.><u>COOL DOWN</u> <dd> Spin easy in your small chain ring @95+rpm the final 10:00 below 60% allowing your HR to return to 50% for the final few minutes.</dd> </dd.></dl> <b>DAILY TOTAL: 1:20</b> <b>WEEK-TO-DATE: 3:25</b>",
+        "dayWorkout": "<dl> <dt> <b><span class=\"run\">RUN 0:50</span></b></dt> <dd> 10:00 warm up jog, allowing your body to slowly get up to 65-70% by the end.</dd> <dd> After warming up, hold your HR at 75% for the next 15 minutes. Then jog easy @ 65% for 5 minutes.</dd> <dd> After jogging easy, go right into 4-5 x (:20 strides with 1:10 easy jogging)</dd> <dd> Cooldown to 50 minutes by bringing your HR below 60%.</dd> <dt> <b><span class=\"bike\">BIKE 0:30</span></b></dt> <dd> <u>WARM UP</u></dd> <dd> 10:00 spinning @90-95rpm</dd> <dd> - get your HR up to 60% in the first 6:00 and closer to 70% by 10:00</dd> <dd> <u>MAIN SET</u></dd> <dd> Get your HR up to 70-75% for the middle 10 minutes.</dd>  <dd. <dd=\"\"><u>COOL DOWN</u> <dd> Spin easy in your small chain ring @95+rpm the final 10:00 below 60% allowing your HR to return to 50% for the final few minutes.</dd> </dd.></dl> <b>DAILY TOTAL: 1:20</b> <b>WEEK-TO-DATE: 3:25</b>",
         "weekNum": 36,
         "id": "day-36-3"
       },
